@@ -1,0 +1,35 @@
+{
+  "name": "InmobiliariasMX",
+  "version": "1.0.0",
+  "description": "Aplicación para Inmobiliarios",
+  "main": "main.js",
+  "author": "W Developers",
+  "scripts": {
+    "start": "electron .",
+    "win": "electron-builder -w",
+    "linux": "electron-builder -l",
+    "make-cert": "electron-builder create-self-signed-cert -p certificado"
+  },
+  "build": {
+    "appId": "com.wdevelopers.mx",
+    "directories": {
+      "buildResources": "assets"
+    },
+    "win": {
+      "certificateFile": "private/certificado.pfx",
+      "verifyUpdateCodeSignature": false,
+      "publisherName": "certificado"
+    },
+    "linux": {}
+  },
+  "dependencies": {
+    "html2canvas": "^1.0.0-alpha.12",
+    "jquery": "^3.3.1",
+    "jspdf": "^1.5.3",
+    "material-design-icons": "^3.0.1",
+    "sweetalert2": "^7.31.1"
+  },
+  "devDependencies": {
+    "electron-builder": "^20.39.0"
+  }
+}

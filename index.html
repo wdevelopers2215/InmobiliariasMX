@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/sweetalert2.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <title>Inmobiliarias MX</title>
+  </head>
+  <body>
+
+    <div id="contenedor">
+      <form class="formulario clearfix">
+        <img src="img/logo.png" class="logo" alt="logo">
+        <h1 class="titulo">Iniciar Sesión</h1>
+        <div class="email clearfix">
+          <div class="icono">
+            <i class="fas fa-envelope"></i>
+          </div>
+          <div class="input">
+            <input type="email" class="email" id="email" required placeholder="Ingrese su correo electrónico">
+          </div>
+        </div>
+        <div class="contrasena clearfix">
+          <div class="icono">
+            <i class="fas fa-key"></i>
+          </div>
+          <div class="input">
+            <input type="password" class="password" id="password" required placeholder="Ingrese su contraseña">
+          </div>
+        </div>
+        <div id="ingresar">
+          <button type="button" id="ingresar"><span class="ingresar">INGRESAR</span></button>
+        </div>
+        <a class="registrarme" href="registrarse.html">Registrarme</a>
+      </form>
+
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase.js"></script>
+    <script src="js/sweetalert2.all.min.js"></script>
+    <script src="js/iniciar_sesion.js"></script>
+
+  </body>
+</html>

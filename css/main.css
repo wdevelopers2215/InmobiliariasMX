@@ -1,0 +1,232 @@
+/*Estilos Globales*/
+* {
+    margin : 0;
+    padding: 0;
+}
+
+html {
+  box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
+}
+
+body {
+  display: none;
+  background-image: url(../img/chairs.jpg);
+  background-position: top center;
+  background-size: cover;
+  /*background-attachment: fixed;*/
+}
+
+*,*:before,*:after {
+  box-sizing: inherit;
+}
+
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+div.contenedor {
+  padding-top: 50px;
+  padding-bottom: 90px;
+}
+
+/*Inicio de Sesion y Registro*/
+
+h1.titulo {
+  text-align: center;
+  padding-bottom: 25px;
+  font-weight: normal;
+}
+
+img.logo {
+  width: 47%;
+  display:block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+  margin-bottom: 25px;
+}
+
+input.nombre, input.email, input.password, input.numero, input.estado {
+  font-size: 16px;
+  color: #000;
+  width: 100%;
+  outline: none;
+  padding-top: 15px;
+  padding-right: 15px;
+  padding-bottom: 10px;
+  background: none;
+  border: none;
+}
+
+div.nombre {
+  border-bottom: 2px solid #808080;
+}
+
+div.mail-registro {
+  margin-top: 10px;
+}
+
+div.email {
+  border-bottom: 2px solid #808080;
+}
+
+div.numero {
+  margin-top: 10px;
+  border-bottom: 2px solid #808080;
+}
+
+div.estado {
+  margin-top: 10px;
+  border-bottom: 2px solid #808080;
+}
+
+div.contrasena {
+  margin-top: 15px;
+  border-bottom: 2px solid #808080;
+}
+
+div.icono {
+  float: left;
+  width: 10%;
+}
+
+div.input {
+  float: left;
+  width: 90%;
+}
+
+div.icono-select {
+  float: left;
+  width: 9%;
+}
+
+div.select {
+  float: left;
+}
+
+div.input-select-numero {
+  float: left;
+}
+
+div.input-select {
+  float: left;
+  width: 20%;
+}
+
+button {
+  margin-top: 30px;
+  background: #E6E6E6;
+  border: none;
+  color: #fff;
+  padding: 13px;
+  cursor: pointer;
+  display: inline-block;
+  width: 100%;
+  /*box-shadow: 0 15px 25px -10px rgba(0, 0, 0, 0.2);*/
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+button:focus {
+  outline: none;
+}
+
+span.ingresar, span.registar {
+  color: #000000;
+}
+
+a.registrarme {
+  margin-top: 20px;
+  text-align: center;
+  display: block;
+  text-decoration: none;
+  color: #000000;
+}
+
+a:focus {
+  outline: none;
+}
+
+/*Iconos*/
+i.fa-envelope {
+  color: #808080;
+  font-size: 1.2em;
+  padding-top: 14px;
+  padding-left: 10px;
+}
+
+i.fa-key {
+  color: #808080;
+  font-size: 1.2em;
+  padding-top: 14px;
+  padding-left: 10px;
+}
+
+i.fa-user {
+  color: #808080;
+  font-size: 1.2em;
+  padding-top: 14px;
+  padding-left: 10px;
+}
+
+i.fa-phone {
+  color: #808080;
+  font-size: 1.2em;
+  padding-top: 14px;
+  padding-left: 10px;
+}
+
+i.fa-map-marker-alt {
+  color: #808080;
+  font-size: 1.2em;
+  padding-top: 14px;
+  padding-left: 10px;
+}
+
+i.fa-arrow-left {
+  color: #808080;
+  font-size: 1.6em;
+}
+
+select {
+  padding: 2px;
+  border: none;
+  font-size: 1em;
+  margin-top: 11px;
+}
+
+form {
+  width: 30%;
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px;
+  background-color: #ffffffff;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  border-radius: 5px;
+  margin-bottom: 40px;
+}
+
+@media only screen and (max-width:575.98px) {
+  form {
+    width: 90%;
+  }
+}
+
+@media only screen and (min-width:576px) and (max-width: 767.98px) {
+  form {
+    width: 60%;
+  }
+}
+
+@media only screen and (min-width:768px) and (max-width: 991.98px) {
+  form {
+    width: 50%;
+  }
+}

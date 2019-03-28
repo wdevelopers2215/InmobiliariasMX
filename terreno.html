@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/main_styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>InmobiliariasMX</title>
+  </head>
+  <body>
+
+    <div class="contenedor-filtros" id="content-filtros">
+      <div class="imagen">
+        <img src="img/logo.png" class="logo" alt="logo">
+      </div>
+      <div class="titulo">
+        <h1 class="titulo">Terreno</h1>
+      </div>
+      <div class="filtros">
+        <select id="tipo">
+          <option value="precio" selected>Precio</option>
+          <option value="fraccionamiento">Fraccionamiento</option>
+          <option value="recamaras">N° de Recamaras</option>
+          <option value="banios">N° de Baños</option>
+          <option value="plantas">N° de Plantas</option>
+          <option value="descripcion">Descripción</option>
+          <option value="terreno">Terreno</option>
+          <option value="construcción">Construcción</option>
+        </select>
+      </div>
+      <div class="busqueda">
+        <div class="busqueda-contenedor">
+          <i class="material-icons">search</i>
+          <input class="busqueda" name="Buscar" placeholder="Búsqueda" type="text">
+        </div>
+      </div>
+      <div class="filtro-minimo">
+        <div class="filtro-minimo-contenedor">
+          <input type="text" class="minimo" id="minimo" required placeholder="Mínimo">
+        </div>
+      </div>
+      <div class="filtro-maximo">
+        <div class="filtro-maximo-contenedor">
+          <input type="text" class="maximo" id="maximo" required placeholder="Máximo">
+        </div>
+      </div>
+    </div>
+
+    <div class="sidebar">
+      <a id="enlace"><i class="fas fa-arrow-left"></i></a>
+    </div>
+
+    <main id="main">
+
+    </main>
+
+    <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase.js"></script>
+    <script src="js/terreno.js"></script>
+
+  </body>
+</html>

@@ -1,0 +1,438 @@
+/*Estilos Globales*/
+* {
+    margin : 0;
+    padding: 0;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,*:before,*:after {
+  box-sizing: inherit;
+}
+
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+/**** RIPPLE ****/
+.ripple {
+ position: relative;
+ overflow: hidden;
+ transform: translate3d(0, 0, 0);
+}
+
+.ripple:after {
+ content: "";
+ display: block;
+ position: absolute;
+ width: 100%;
+ height: 100%;
+ top: 0;
+ left: 0;
+ pointer-events: none;
+ background-image: radial-gradient(circle, #808080 10%, transparent 10.01%);
+ background-repeat: no-repeat;
+ background-position: 50%;
+ transform: scale(10, 10);
+ opacity: 0;
+ transition: transform .5s, opacity 1s;
+}
+
+.ripple:active:after {
+ transform: scale(0, 0);
+ opacity: .3;
+ transition: 0s;
+}
+
+div.contenedor-top-menu {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+div.side-left {
+  width: 50%;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+div.side-right {
+  width: 50%;
+  padding-right: 2.5%;
+}
+
+div.circle-buttons {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  float: right;
+}
+
+button.circle-button {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  /*display: table;*/
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
+  cursor: pointer;
+  margin-top: 5px;
+  border: none;
+  background-color: #ffffff;
+}
+
+button.circle-button:nth-child(2) {
+  margin-left: 20px;
+}
+
+button.circle-button:nth-child(3) {
+  margin-left: 20px;
+}
+
+button:focus {
+  outline: none;
+}
+
+a {
+  outline: none;
+}
+
+i.atras {
+  padding: 15px;
+}
+
+i.fas {
+  font-size: 1.5em;
+  color: #686868;
+}
+
+.scroll {
+  box-shadow: 0 13px 30px -23px rgba(0, 0, 0, 0.4);
+}
+
+div.top-menu {
+  position: fixed;
+  z-index: 1;
+  background-color: #ffffff;
+  width: 100%;
+}
+
+div.contendor {
+  width: 98%;
+  padding-top: 40px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+section div.dato-general > i {
+  margin-right: 10px;
+}
+
+div.contendor-imgs {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+div.img-grande-contenedor {
+  width: 75%;
+  margin: 15px;
+}
+
+div.img-grande-contenedor img {
+  height: 500px;
+  object-fit: cover;
+  background-image: url("../img/imageOff_vWeb.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 3px;
+  box-shadow: 0 0 3px #8a8c8c;
+  width: 100%;
+}
+
+div.galeria-imgs {
+  height: 500px;
+  width: 20%;
+  margin: auto;
+  /*padding: 20px;*/
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  /*box-shadow: 0 0 3px #8a8c8c;
+  border-radius: 3px;
+  border: 1px solid #dadce0;
+  border-radius: 6px;
+  border-radius: 3px;
+  border: 1px solid #D4D4D4;*/
+}
+
+div.contedorImgGaleria {
+  height: 25%;
+  padding: 10px;
+}
+
+img.imgCasaGaleria {
+  width: 100%;
+  height: 100%;
+  background-image: url("../img/imageOff_vWeb.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 3px;
+  object-fit: cover;
+  cursor: pointer;
+  transition: 0.9s;
+}
+
+img.imgCasaGaleria:hover {
+  transform: scale(1.05);
+}
+
+article.datos {
+  /*border-radius: 3px;
+  border: 1px solid #D4D4D4;*/
+  width: 90%;
+  margin: 0 auto;
+  padding: 15px;
+}
+
+#estado {
+  padding-bottom: 15px;
+  font-family: 'Roboto', sans-serif;
+  color: #3D3D3D;
+}
+
+#descripcion {
+  font-size: 1.3em;
+  padding-bottom: 15px;
+  font-family: 'Roboto', sans-serif;
+}
+
+span.precioName {
+  font-weight: bold;
+  font-size: 1.3em;
+  color: #3D3D3D;
+}
+
+span.precioNumber {
+  font-size: 1.8em;
+  color: #8FD045;
+}
+
+#precio {
+  padding-bottom: 15px;
+  float: left;
+}
+
+#precioPublico {
+  padding-bottom: 15px;
+}
+
+i.mapa {
+  float: left;
+  margin-top: 5px;
+  margin-left: 20px;
+  cursor: pointer;
+}
+
+h3 {
+  color: #3D3D3D;
+  padding-bottom: 15px;
+}
+
+div.hr {
+  width: 100%;
+  height: 1px;
+  background-color: #D4D4D4;
+  margin-bottom: 15px;
+}
+
+div.ubicacion p {
+  padding-bottom: 8px;
+  font-size: 1.1em;
+}
+
+span.letras-grises {
+  color: #000000;
+  font-weight: bold;
+}
+
+#cPostal{
+  padding-bottom: 20px;
+}
+
+div.contenedor-datos-generales {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  padding-bottom: 40px;
+}
+
+section {
+  width: 30%;
+  font-family: 'Open Sans', sans-serif;
+}
+
+article.datos {
+  font-family: 'Open Sans', sans-serif;
+}
+
+h3.title-datos {
+  margin-top: 25px!important;
+}
+
+i.notas {
+  float: left;
+  padding-bottom: 50px;
+  margin-right: 10px;
+}
+
+div.dato-general {
+  margin-top: 15px;
+  padding: 15px;
+  width: 90%;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  border-radius: 3px;
+  border: 1px solid #D4D4D4;
+}
+
+div.swal2-popup {
+  font-family: 'Open Sans', sans-serif;
+}
+
+/**** PDF ****/
+
+div.pagina-pdf {
+  font-family: arial;
+  width: 21.59cm;
+  height: 35.56cm;
+  padding: 40px 40px;
+  display: none;
+  background-image: url("../img/marcaAguaO.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 90% 55%;
+}
+
+img.logo {
+  width: 10%;
+  float: left;
+}
+
+h1.grupo-elite {
+  float: left;
+  font-size: 27px;
+  margin-top: 25px;
+  margin-left: 22px;
+}
+
+div.hrColorElite {
+  margin-top: 10px;
+  width: 100%;
+  height: 6px;
+  background-color: rgb(241, 199, 88);
+}
+
+div.hrNegro {
+  width: 100%;
+  height: 6px;
+  background-color: #000;
+}
+
+h4.pdf {
+  margin-top: 8px;
+  padding-bottom: 8px;
+  font-weight: bold;
+}
+
+div.galeria-pdf {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+div.contenedor-imgGrande {
+  width: 70%;
+  height: 300px;
+  padding-right: 20px;
+}
+
+img.imgPdfGrande {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+div.multiple-imgs-pdf {
+  width: 30%;
+}
+
+img.imgPdf {
+  width: 100%;
+  padding-bottom: 15px;
+}
+
+h4.descripcion-pdf {
+  margin-top: 10px;
+  padding-bottom: 2px;
+}
+
+h4.precio-pdf {
+  margin-top: 10px;
+}
+
+span.precio-pdf {
+  font-size: 1.2em;
+  color: rgb(124, 179, 66);
+  font-weight: bold;
+}
+
+h4.datos-generales-pdf {
+  margin-top: 10px;
+  padding-bottom: 2px;
+}
+
+h4.dato-general {
+  padding-bottom: 3px;
+}
+
+span.dato {
+  color: rgb(83, 62, 41);
+}
+
+h4.ubicacion-pdf {
+  margin-top: 8px;
+  padding-bottom: 3px;
+}
+
+h4.fraccionamiento-pdf {
+  padding-bottom: 10px;
+}
+
+span.normal {
+  font-weight: normal;
+}
+
+h4.inmobiliario {
+  padding-bottom: 2px;
+}
+
+h4.contacto {
+  margin-top: 10px;
+  padding-bottom: 2px;
+}
+
+p.numInmobiliario {
+  padding-bottom: 2px;
+}
