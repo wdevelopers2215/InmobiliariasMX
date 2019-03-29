@@ -1,46 +1,29 @@
 const {app, BrowserWindow} = require('electron');
+const mainWindow = require('./mainWindow')
+const updater = require('./updater');
 
 /*const path = require('path');
 const url = require('url');*/
 
-let mainWindow;
-
 process.env.GOOGLE_API_KEY = 'AIzaSyDWwimwqf8iqMjtvr1uN0jl2Jrqo2FloP8';
 
-function createWindow() {
-  //mainWindow = new BrowserWindow({width: 800, height: 600})
+app.on('ready', () => {
 
-  mainWindow = new BrowserWindow({
-    minHeight: 300,
-    minWidth: 1200
-  });
-  mainWindow.maximize();
-  //mainWindow.setMenu(null);
+  //create main window
+  mainWindow.createWindow()
 
-  mainWindow.loadFile('index.html');
-
-  /*mainWindow.loadURL(url.format({
-    pathname: path.join(__dirname, 'index.html'),
-    protocol: 'file',
-    slashes: true
-  }))*/
-
-  mainWindow.on('closed', function () {
-    mainWindow = null
-  });
-
-}
-
-app.on('ready', createWindow)
+  //Check for update after x seconds
+  setTimeout(updater.check, 2000)
+})
 
 app.on('window-all-closed', function () {
   if (process.platform !== 'darwin') {
-    app.quit();
+    app.quit()
   }
-});
+})
 
 app.on('activate', function () {
   if (mainWindow === null) {
-    createWindow();
+    mainWindow.createWindow()
   }
-});
+})
