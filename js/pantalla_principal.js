@@ -18,6 +18,46 @@ let buttonPerfilClicked = false;
 
     firebase.initializeApp(config);
 
+    //Pago
+    let layoutSinPagar = document.getElementById("layout-sinPagar");
+    let layoutPagado = document.getElementById("layout-pagado");
+
+    firebase.auth().onAuthStateChanged(function(user) {
+      if (user) {
+        imgPerfil.src = `https://firebasestorage.googleapis.com/v0/b/inmobiliariasmx.appspot.com/o/profile_pictures%2F${user.uid}profilePicture?alt=media&token`;
+
+        var ref = firebase.database().ref("/Usuarios").child(user.uid + "/Datos_Usuario");
+
+        ref.on("value", function(snapshot){
+          var datos = snapshot.val();
+
+          if(datos.Pago === "PENDIENTE") {
+            layoutSinPagar.style.display = "block";
+            layoutPagado.style.display = "none";
+          } else if(datos.Pago === "PAGADO") {
+            layoutSinPagar.style.display = "none";
+            layoutPagado.style.display = "block";
+          }
+        });
+
+        var sys = require('util')
+        var exec = require('child_process').exec;
+        function puts(error, stdout, stderr) {
+            let datos = stdout.split(' ');
+            console.log(datos[6]);
+            let data = datos[6].trim().toString();
+            let dataCortada;
+            if(data.length > 15) {
+              dataCortada = data.substring(0,15);
+            }
+            firebase.database().ref("Usuarios/" + user.uid + "/Datos_Usuario/Conexiones/"+dataCortada).child("PC").set("Desktop");
+        }
+
+        exec("wmic DISKDRIVE get SerialNumber", puts);
+
+      }
+    });
+
     let dbRef = firebase.database().ref("Oferta/Aguascalientes");
     let storagePorfile = firebase.storage().ref("/profile_pictures");
     var storage = firebase.storage().ref("/fotos");
@@ -34,12 +74,6 @@ let buttonPerfilClicked = false;
         topShadow.classList.remove("scroll");
       }
     };
-
-    firebase.auth().onAuthStateChanged(function(user) {
-      if (user) {
-        imgPerfil.src = `https://firebasestorage.googleapis.com/v0/b/inmobiliariasmx.appspot.com/o/profile_pictures%2F${user.uid}profilePicture?alt=media&token`;
-      }
-    });
 
     dbRef.on("child_added", function (snapshot) {
 

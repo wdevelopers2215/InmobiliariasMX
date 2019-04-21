@@ -30,6 +30,11 @@ html {
     clear: both;
 }
 
+/*** Sin Pagar ***/
+div.sin-pagar {
+  display: none;
+}
+
 /**** PANTALLA PRINCIPAL ****/
 div.padre {
   padding-right: 2.5%;

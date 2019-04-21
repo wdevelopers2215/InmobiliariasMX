@@ -10,58 +10,68 @@
     <title>InmobiliariasMX</title>
   </head>
   <body>
-    <div class="padre">
-      <div class="contenedor-filtros" id="content-filtros">
-        <div class="imagen">
-          <img src="img/logo.png" class="logo" alt="logo">
-        </div>
-        <div class="titulo">
-          <h1 class="titulo">Principal</h1>
-        </div>
-        <div class="filtros">
-          <select id="tipo">
-            <option value="precio" selected>Precio</option>
-            <option value="fraccionamiento">Fraccionamiento</option>
-            <option value="recamaras">N° de Recamaras</option>
-            <option value="banios">N° de Baños</option>
-            <option value="plantas">N° de Plantas</option>
-            <option value="descripcion">Descripción</option>
-            <option value="terreno">Terreno</option>
-            <option value="construcción">Construcción</option>
-          </select>
-        </div>
-        <div class="busqueda">
-          <div class="busqueda-contenedor">
-            <i class="material-icons">search</i>
-            <input class="busqueda" name="Buscar" placeholder="Búsqueda" type="text">
+    <div class="sin-pagar" id="layout-sinPagar">
+      <center>
+        <img src="img/ic_inmobiliariasmx.png">
+        <h2>Lo sentimos, para poder usar el programa realice el pago correspondiente, gracias por su comprensión</h2>
+      </center>
+    </div>
+
+    <div id="layout-pagado">
+      <div class="padre">
+        <div class="contenedor-filtros" id="content-filtros">
+          <div class="imagen">
+            <img src="img/logo.png" class="logo" alt="logo">
+          </div>
+          <div class="titulo">
+            <h1 class="titulo">Principal</h1>
+          </div>
+          <div class="filtros">
+            <select id="tipo">
+              <option value="precio" selected>Precio</option>
+              <option value="fraccionamiento">Fraccionamiento</option>
+              <option value="recamaras">N° de Recamaras</option>
+              <option value="banios">N° de Baños</option>
+              <option value="plantas">N° de Plantas</option>
+              <option value="descripcion">Descripción</option>
+              <option value="terreno">Terreno</option>
+              <option value="construcción">Construcción</option>
+            </select>
+          </div>
+          <div class="busqueda">
+            <div class="busqueda-contenedor">
+              <i class="material-icons">search</i>
+              <input class="busqueda" name="Buscar" placeholder="Búsqueda" type="text">
+            </div>
+          </div>
+          <div class="filtro-minimo">
+            <div class="filtro-minimo-contenedor">
+              <input type="text" class="minimo" id="minimo" required placeholder="Mínimo">
+            </div>
+          </div>
+          <div class="filtro-maximo">
+            <div class="filtro-maximo-contenedor">
+              <input type="text" class="maximo" id="maximo" required placeholder="Máximo">
+            </div>
           </div>
         </div>
-        <div class="filtro-minimo">
-          <div class="filtro-minimo-contenedor">
-            <input type="text" class="minimo" id="minimo" required placeholder="Mínimo">
+
+        </div><!--.contendor-->
+
+        <div class="sidebar">
+          <div>
+            <a href="perfil.html"><img src="img/account_circle_grey.png" id="imgPerfil" alt="img"></a>
           </div>
+          <a href="venta.html">Venta</a>
+          <a href="renta.html">Renta</a>
+          <a href="inventario.html">Inventario</a>
         </div>
-        <div class="filtro-maximo">
-          <div class="filtro-maximo-contenedor">
-            <input type="text" class="maximo" id="maximo" required placeholder="Máximo">
-          </div>
-        </div>
-      </div>
 
-      </div><!--.contendor-->
+        <main id="main">
 
-      <div class="sidebar">
-        <div class="">
-          <a href="perfil.html"><img src="img/account_circle_grey.png" id="imgPerfil" alt="img"></a>
-        </div>
-        <a href="venta.html">Venta</a>
-        <a href="renta.html">Renta</a>
-        <a href="inventario.html">Inventario</a>
-      </div>
+        </main>
 
-      <main id="main">
-
-      </main>
+    </div>
 
     <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase.js"></script>
     <script src="js/pantalla_principal.js"></script>

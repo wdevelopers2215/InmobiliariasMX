@@ -1,14 +1,17 @@
 {
   "name": "InmobiliariasMX",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Aplicación para Inmobiliarios",
   "main": "main.js",
   "author": "W Developers",
   "scripts": {
     "start": "electron .",
     "win": "electron-builder -w",
+    "mac": "electron-builder -m",
     "linux": "electron-builder -l",
-    "make-cert": "electron-builder create-self-signed-cert -p certificado"
+    "build": "electron-builder -mwl",
+    "make-cert": "electron-builder create-self-signed-cert -p certificado",
+    "publish": "electron-builder build -mwl -p onTagOrDraft"
   },
   "build": {
     "appId": "com.wdevelopers.mx",
@@ -22,6 +25,11 @@
       "certificateFile": "private/certificado.pfx",
       "verifyUpdateCodeSignature": false,
       "publisherName": "certificado"
+    },
+    "mac": {
+      "publish": [
+        "github"
+      ]
     },
     "linux": {
       "publish": [
