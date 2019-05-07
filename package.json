@@ -11,7 +11,7 @@
     "linux": "electron-builder -l",
     "build": "electron-builder -mwl",
     "make-cert": "electron-builder create-self-signed-cert -p certificado",
-    "publish": "electron-builder build -mwl -p onTagOrDraft"
+    "publish": "electron-builder build -w -p onTagOrDraft"
   },
   "build": {
     "appId": "com.wdevelopers.mx",
