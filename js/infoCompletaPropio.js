@@ -60,7 +60,7 @@ let campoNumInmobiliario;
     }
     if (params["id"]) {
       casaid = params["id"];
-      console.log(casaid);
+      // console.log(casaid);
     } else {
       console.log("No se envió el parámetro variable");
     }
@@ -178,7 +178,7 @@ let campoNumInmobiliario;
           var casa = snapshot.val();
           var key = snapshot.key;
 
-          refPublico = firebase.database().ref("/Oferta").child(casa.estadoUsuario+"/"+casa.idOferta);
+          refPublico = firebase.database().ref("/Oferta").child(casa.estadoUsuario+"/"+casa.id);
 
           userId = casa.userId;
 
@@ -277,17 +277,17 @@ let campoNumInmobiliario;
                 });
 
                 let borrarDatosPublico = new Promise(function(resolve, reject) {
-                  ref.remove().then(function() {
+                  refPublico.remove().then(function() {
                     resolve();
                   }).catch(function(error) {
                     reject();
                   });
                 });
 
-                Promise.all([borrarImg1, borrarImg2, borrarImg3, borrarImg5, borrarDatos]).then(function() {
+                Promise.all([borrarImg1, borrarImg2, borrarImg3, borrarImg4, borrarImg5, borrarDatos, borrarDatosPublico]).then(function() {
                   location.href = "inventario.html";
                 }).catch(function(error) {
-                  console.log("Error");
+                  // console.log("Error");
                 });
 
               }
@@ -301,7 +301,7 @@ let campoNumInmobiliario;
               crearItem(casa, url);*/
               imgGrande.src = url;
             }).catch(function(error) {
-              imgGrande.src = "img/image_off.png";
+
             });
 
 
@@ -336,7 +336,7 @@ let campoNumInmobiliario;
             <p id="telefono">Teléfono: ${casa.numeroUsuario}</p>*/
 
             let abajo = `
-              <div class="hr"></div>
+              <div class="hr" id="hr-propio"></div>
               <h3>Ubicación</h3>
               <div class="ubicacion">
                 <p id="calle"><span class="letras-grises">Calle: </span>${campoCalle}</p>
@@ -348,26 +348,18 @@ let campoNumInmobiliario;
                 <p id="cPostal"><span class="letras-grises">Código Postal: </span>${casa.codigoPostal}</p>
               </div>
 
-              <div class="hr"></div>
+              <div class="hr" id="hr-propio"></div>
               <h3 class="title-datos">Datos Generales</h3>
               <div class="contenedor-datos-generales">
-                <section>
-                  <div class="dato-general"><i class="fas fa-couch"></i><p id="amueblada">Amueblada: ${campoAmueblada}</p></div>
-                  <div class="dato-general"><i class="fas fa-wrench"></i><p id="construccion">Construcción: ${campoSupConstruccion}</p></div>
-                  <div class="dato-general"><i class="fas fa-bed"></i><p id="nRecamaras">N° Recamaras: ${campoNumRecamaras}</p></div>
-                </section>
-
-                <section>
-                  <div class="dato-general"><i class="fas fa-car"></i><p id="nCarros">N° Carros: ${campoCantidadCarrosCochera}</p></div>
-                  <div class="dato-general"><i class="fas fa-mountain"></i><p id="terreno">Terreno: ${campoSupTerreno}</p></div>
-                  <div class="dato-general"><i class="fas fa-home"></i><p id="nPlantas">N° Plantas: ${campoNPlantas}</p></div>
-                </section>
-
-                <section>
-                  <div class="dato-general"><i class="fas fa-toilet-paper"></i><p id="nBanios">N° Baños: ${campoNumbanios}</p></div>
-                  <div class="dato-general"><i class="fas fa-dollar-sign"></i><p id="costoMantenimiento">Costo Mantenimiento: ${campoCosteMantenimiento}</p></div>
-                  <div class="dato-general"><i class="fas fa-percentage"></i><p id="comision">Porcentaje de Comisión: ${campoComision}</p></div>
-                </section>
+                  <div class="dato-general"><p id="amueblada"><i class="fas fa-couch"></i>Amueblada: ${casa.amueblada}</p></div>
+                  <div class="dato-general"><p id="construccion"><i class="fas fa-wrench"></i>Construcción: ${casa.supConstruccion}</p></div>
+                  <div class="dato-general"><p id="nRecamaras"><i class="fas fa-bed"></i>N° Recamaras: ${casa.numRecamaras}</p></div>
+                  <div class="dato-general"><p id="nCarros"><i class="fas fa-car"></i>N° Carros: ${casa.cantidadCarrosCochera}</p></div>
+                  <div class="dato-general"><p id="terreno"><i class="fas fa-mountain"></i>Terreno: ${casa.supTerreno}</p></div>
+                  <div class="dato-general"><p id="nPlantas"><i class="fas fa-home"></i>N° Plantas: ${casa.nPlantas}</p></div>
+                  <div class="dato-general"><p id="nBanios"><i class="fas fa-toilet-paper"></i>N° Baños: ${casa.numBanios}</p></div>
+                  <div class="dato-general"><p id="costoMantenimiento"><i class="fas fa-dollar-sign"></i>Costo Mantenimiento: ${casa.costeMantenimiento}</p></div>
+                  <div class="dato-general"><p id="comision"><i class="fas fa-percentage"></i>Porcentaje de Comisión: ${casa.comision}</p></div>
               </div>
 
               <div class="notas clearfix">

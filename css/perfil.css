@@ -25,12 +25,14 @@ html {
 
 div.sidebar {
   height: 100%;
-  width: 12%;
+  width: 15%;
   position: fixed;
   z-index: 1;
   top: 0;
   left: 0;
   background-color: #111111;
+  background: rgb(25, 31, 45);
+  background: linear-gradient(rgba(25, 31, 45, 1) 49%, rgba(39, 45, 67, 1) 99%);
   overflow: hidden;
   box-shadow: -3px 0 30px 0 #555;
   padding-top: 20px;
@@ -66,7 +68,7 @@ a:hover {
 }
 
 div.contenedor {
-  margin-left: 15%;
+  margin-left: 17%;
 }
 
 img#imgPerfil {
@@ -85,7 +87,8 @@ img#imgPerfil {
 
 article {
   border-radius: 3px;
-  border: 1px solid #D4D4D4;
+  border: 1px solid transparent;
+  box-shadow: 0 1px 1px 0 rgba(65, 69, 73, 0.3), 0 1px 3px 1px rgba(65, 69, 73, 0.15);
   margin-right: 37px;
   padding: 20px;
 }

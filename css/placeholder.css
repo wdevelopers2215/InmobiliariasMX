@@ -1,0 +1,158 @@
+#placeholder {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-left: 15%;
+}
+
+.container {
+  background: white;
+  max-width: 320px;
+  margin: 20px;
+  box-shadow: 0px 7px 35px rgba(0, 0, 0, 0.2);
+}
+
+@media only screen and (max-width: 1300px) {
+  .container {
+    margin: 15px;
+    max-width: 300px;
+  }
+}
+
+.background {
+  animation-duration: 1.2s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-name: placeHolderShimmer;
+  animation-timing-function: linear;
+  background: #f6f7f8;
+  background: linear-gradient(to right, #eeeeee 8%, #dddddd 18%, #eeeeee 33%);
+  background-size: 800px 104px;
+  justify-content: center;
+  flex-wrap: wrap;
+  min-height: 100px;
+}
+
+/* .right {
+  float: right;
+} */
+.loader_menu {
+  position: static;
+  width: auto;
+  height: auto;
+  float: right;
+  display: flex;
+}
+.menu .loader_menu_item {
+  background: white;
+  border-radius: 50%;
+  line-height: 70px;
+  width: 35px;
+  height: 35px;
+  overflow: hidden;
+  margin: 15px;
+}
+
+div.loader_sidebar_items {
+  margin-top: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+  height: 28px;
+  overflow: hidden;
+  border-radius: 15px;
+}
+
+.pag {
+  background: white;
+  border: 1px solid #e5e6e9;
+  border-radius: 3px;
+  max-width: 110px;
+  height: 43px;
+  overflow: hidden;
+  margin: 0 auto;
+  margin: 15px;
+  box-shadow: 0 9px 12px 0 rgba(0, 0, 0, 0.2);
+}
+
+.image {
+  width: 100%;
+  height: 250px;
+  background: transparent;
+}
+
+.bar {
+  height: 22px;
+  background: transparent;
+  position: relative;
+  width: 100%;
+}
+
+.bar::before {
+  position: absolute;
+  content: "";
+  left: 0;
+  width: 5px;
+  height: 22px;
+  background: white;
+}
+
+.bar::after {
+  position: absolute;
+  right: 0;
+  width: 10%;
+  height: 22px;
+  content: "";
+  background: white;
+}
+
+.bar.medium::after {
+  width: 50%;
+}
+.bar.small::before {
+  width: 5px;
+}
+.bar.small::after {
+  width: 75%;
+}
+
+.mask {
+  background: white;
+  width: 100%;
+}
+
+.thick {
+  height: 30px;
+}
+
+.thin {
+  height: 0.5rem;
+}
+
+@media screen and (min-width: 1000px) {
+  .image {
+    /* width: 100%;
+    height: 120px; */
+    width: 100%;
+    height: 200px;
+    /* background: transparent; */
+  }
+}
+
+@keyframes preloadAnimation {
+  0% {
+    background-position: -405px 0;
+  }
+  100% {
+    background-position: 405px 0;
+  }
+}
+
+@keyframes placeHolderShimmer {
+  0% {
+    background-position: -468px 0;
+  }
+  100% {
+    background-position: 468px 0;
+  }
+}

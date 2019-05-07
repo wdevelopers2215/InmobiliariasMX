@@ -1,24 +1,47 @@
 // Modules
-const {BrowserWindow} = require('electron')
+const { BrowserWindow, session } = require("electron");
 
 // BrowserWindow instance
-exports.win
+exports.win;
 
 // mainWindow createWindow fn
 exports.createWindow = () => {
+  //Session from new partition
+  // let appSession = session.fromPartition("partition1");
 
   this.win = new BrowserWindow({
     minHeight: 300,
-    minWidth: 1200
-  })
+    minWidth: 1200,
+    icon: `${__dirname}/assets/icons/64x64.png`
+  });
 
-  this.win.maximize()
+  //
+
+  // session.defaultSession.cookies.set(cookie, error => {
+  //   if (error) console.error(error);
+  // });
+
+  // session.defaultSession.cookies.get(
+  //   { url: "http://www.github.com" },
+  //   (error, cookies) => {
+  //     console.log(error, cookies);
+  //   }
+  // );
+
+  // session.defaultSession.cookies.get({}, (error, cookies) => {
+  //   console.log(error, cookies);
+  // });
+
+  // let mainSession = this.win.webContents.session;
+  // mainSession.clearStorageData();
+
+  this.win.maximize();
 
   // Load main window content
-  this.win.loadURL(`file://${__dirname}/index.html`)
+  this.win.loadURL(`file://${__dirname}/index.html`);
 
   // Handle window closed
-  this.win.on('closed', () => {
-    this.win = null
-  })
-}
+  this.win.on("closed", () => {
+    this.win = null;
+  });
+};

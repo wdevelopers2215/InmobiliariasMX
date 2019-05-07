@@ -10,46 +10,57 @@
     <title>InmobiliariasMX</title>
   </head>
   <body>
-    <div class="contenedor-filtros" id="content-filtros">
-      <div class="imagen">
-        <img src="img/logo.png" class="logo" alt="logo">
-      </div>
-      <div class="titulo">
-        <h1 class="titulo">Principal</h1>
-      </div>
-      <div class="filtros">
-        <select id="tipo">
-          <option value="precio" selected>Precio</option>
-          <option value="fraccionamiento">Fraccionamiento</option>
-          <option value="recamaras">N° de Recamaras</option>
-          <option value="banios">N° de Baños</option>
-          <option value="plantas">N° de Plantas</option>
-          <option value="descripcion">Descripción</option>
-          <option value="terreno">Terreno</option>
-          <option value="construcción">Construcción</option>
-        </select>
-      </div>
-      <div class="busqueda">
-        <div class="busqueda-contenedor">
-          <i class="material-icons">search</i>
-          <input class="busqueda" name="Buscar" placeholder="Búsqueda" type="text">
+
+    <header id="top-bar">
+      <div class="menu-filtros">
+        <div class="contenedor-logo-nombre clearfix">
+          <img src="img/logo.png" alt="logo"/>
+          <span class="titulo">Inventario</span>
         </div>
+        <nav class="menu">
+          <span>
+            <a href="nuevo_inmueble.html">Nuevo</a>
+          </span>
+        </nav>
       </div>
-      <div class="filtro-minimo">
-        <div class="filtro-minimo-contenedor">
-          <input type="text" class="minimo" id="minimo" required placeholder="Mínimo">
-        </div>
-      </div>
-      <div class="filtro-maximo">
-        <div class="filtro-maximo-contenedor">
-          <input type="text" class="maximo" id="maximo" required placeholder="Máximo">
-        </div>
-      </div>
-    </div>
+    </header>
 
     <div class="sidebar">
-      <a href="pantalla_principal.html"><i class="fas fa-arrow-left"></i></a>
-      <a href="nuevo_inmueble.html">Nuevo</a>
+        <center>
+          <div class="atras-sidebar">
+            <a href="pantalla_principal.html"><i class="fas fa-arrow-left"></i></a>
+          </div>
+        </center>
+
+        <!-- <div class="filtros-sidebar">
+          <div class="busqueda-contenedor">
+            <i class="material-icons">search</i>
+            <input class="busqueda" name="Buscar" placeholder="Búsqueda" type="text">
+          </div>
+          <div class="filtros-select">
+            <select id="tipo">
+              <option value="precio" selected>Precio</option>
+              <option value="fraccionamiento">Fraccionamiento</option>
+              <option value="recamaras">N° de Recamaras</option>
+              <option value="banios">N° de Baños</option>
+              <option value="plantas">N° de Plantas</option>
+              <option value="descripcion">Descripción</option>
+              <option value="terreno">Terreno</option>
+              <option value="construcción">Construcción</option>
+            </select>
+          </div>
+
+          <div class="filtro-minimo">
+            <div class="filtro-minimo-contenedor">
+              <input type="text" class="minimo" id="minimo" required placeholder="Mínimo"/>
+            </div>
+          </div>
+          <div class="filtro-maximo">
+            <div class="filtro-maximo-contenedor">
+              <input type="text" class="maximo" id="maximo" required placeholder="Máximo"/>
+            </div>
+          </div>
+        </div> -->
     </div>
 
     <main id="main">

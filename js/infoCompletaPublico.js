@@ -25,7 +25,7 @@
     }
     if (params["id"]) {
       var casaid = params["id"];
-      console.log(casaid);
+      // console.log(casaid);
     } else {
       console.log("No se envió el parámetro variable");
     }
@@ -57,7 +57,7 @@
           crearItem(casa, url);*/
           imgGrande.src = url;
         }).catch(function(error) {
-          imgGrande.src = "img/image_off.png";
+          // imgGrande.src = "img/image_off.png";
         });
 
 
@@ -82,7 +82,7 @@
         let arriba = `
           <h1 id="estado">Propiedad en ${casa.estado}</h1>
           <p id="descripcion">${casa.descripcion}</p>
-          <p id="precioPublico"><span class="precioName">Precio: </span><span class="precioNumber">${precio} MXN</span></p>
+          <p id="precioPublico"><span class="precioNumber">${precio} MXN</span></p>
         `;
 
         /*<p id="contacto">Contacto</p>
@@ -102,33 +102,56 @@
           <div class="hr"></div>
           <h3 class="title-datos">Datos Generales</h3>
           <div class="contenedor-datos-generales">
-            <section>
-              <div class="dato-general"><i class="fas fa-couch"></i><p id="amueblada">Amueblada: ${casa.amueblada}</p></div>
-              <div class="dato-general"><i class="fas fa-wrench"></i><p id="construccion">Construcción: ${casa.supConstruccion}</p></div>
-              <div class="dato-general"><i class="fas fa-bed"></i><p id="nRecamaras">N° Recamaras: ${casa.numRecamaras}</p></div>
-            </section>
-
-            <section>
-              <div class="dato-general"><i class="fas fa-car"></i><p id="nCarros">N° Carros: ${casa.cantidadCarrosCochera}</p></div>
-              <div class="dato-general"><i class="fas fa-mountain"></i><p id="terreno">Terreno: ${casa.supTerreno}</p></div>
-              <div class="dato-general"><i class="fas fa-home"></i><p id="nPlantas">N° Plantas: ${casa.nPlantas}</p></div>
-            </section>
-
-            <section>
-              <div class="dato-general"><i class="fas fa-toilet-paper"></i><p id="nBanios">N° Baños: ${casa.numBanios}</p></div>
-              <div class="dato-general"><i class="fas fa-dollar-sign"></i><p id="costoMantenimiento">Costo Mantenimiento: ${casa.costeMantenimiento}</p></div>
-              <div class="dato-general"><i class="fas fa-percentage"></i><p id="comision">Porcentaje de Comisión: ${casa.comision}</p></div>
-            </section>
-          </div>
-
-          <div class="notas clearfix">
-            <i class="fas fa-tags notas"></i>
-            <p>${casa.notas}</p>
+              <div class="dato-general"><p id="amueblada"><i class="fas fa-couch"></i>Amueblada: ${casa.amueblada}</p></div>
+              <div class="dato-general"><p id="construccion"><i class="fas fa-wrench"></i>Construcción: ${casa.supConstruccion}</p></div>
+              <div class="dato-general"><p id="nRecamaras"><i class="fas fa-bed"></i>N° Recamaras: ${casa.numRecamaras}</p></div>
+              <div class="dato-general"><p id="nCarros"><i class="fas fa-car"></i>N° Carros: ${casa.cantidadCarrosCochera}</p></div>
+              <div class="dato-general"><p id="terreno"><i class="fas fa-mountain"></i>Terreno: ${casa.supTerreno}</p></div>
+              <div class="dato-general"><p id="nPlantas"><i class="fas fa-home"></i>N° Plantas: ${casa.nPlantas}</p></div>
+              <div class="dato-general"><p id="nBanios"><i class="fas fa-toilet-paper"></i>N° Baños: ${casa.numBanios}</p></div>
+              <div class="dato-general"><p id="costoMantenimiento"><i class="fas fa-dollar-sign"></i>Costo Mantenimiento: ${casa.costeMantenimiento}</p></div>
+              <div class="dato-general"><p id="comision"><i class="fas fa-percentage"></i>Porcentaje de Comisión: ${casa.comision}</p></div>
           </div>
         `;
 
         contenedorArriba.innerHTML = arriba;
         contenedorAbajo.innerHTML = abajo;
+
+        document.getElementById("notas").innerHTML = `<i class="fas fa-tag"></i>${casa.notas}`;
+
+        let numeroUsuario;
+
+        if (casa.numeroUsuario !== undefined && casa.numeroUsuario !== "") {
+          if (casa.numeroUsuario.substring(0, 1) === "5") {
+            numeroUsuario = casa.numeroUsuario.substring(
+              3,
+              casa.numeroUsuario.length
+            );
+          } else if (casa.numeroUsuario.substring(0, 1) === "1") {
+            numeroUsuario = casa.numeroUsuario.substring(
+              1,
+              casa.numeroUsuario.length
+            );
+          }
+        }
+
+        document.getElementById("nombreInmobiliario").innerHTML = casa.usuarioPoseedor;
+        document.getElementById("telefonoInmobiliario").innerHTML =  numeroUsuario;
+        document.getElementById("correoInmobiliario").innerHTML = casa.correoUsuario;
+
+        let imgPerfil = document.createElement("IMG");
+        let storagePorfile = firebase.storage().ref("/profile_pictures");
+
+        storagePorfile.child(casa.userId + "profilePicture").getDownloadURL().then(function(url) {
+          imgPerfil.src = url;
+
+        }).catch(function(error) {
+
+        });
+
+        document.getElementById("contenido-img-perfil").appendChild(imgPerfil);
+
+
 
     });
 

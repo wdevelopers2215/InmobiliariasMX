@@ -18,7 +18,7 @@ const Swal = require('sweetalert2');
 
     var storage = firebase.storage().ref("/fotos");
 
-    var topShadow = document.getElementById("content-filtros");
+    var topShadow = document.getElementById("menu-filtros");
 
     window.onscroll = function() {
       "use strict";
