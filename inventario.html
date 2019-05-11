@@ -1,73 +1,46 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="css/all.min.css">
-    <link rel="stylesheet" href="css/main_styles.css">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <title>InmobiliariasMX</title>
-  </head>
-  <body>
 
-    <header id="top-bar">
-      <div class="menu-filtros">
-        <div class="contenedor-logo-nombre clearfix">
-          <img src="img/logo.png" alt="logo"/>
-          <span class="titulo">Inventario</span>
-        </div>
-        <nav class="menu">
-          <span>
-            <a href="nuevo_inmueble.html">Nuevo</a>
-          </span>
-        </nav>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/all.min.css">
+  <link rel="stylesheet" href="css/main_styles.css">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <title>Inmobiliarias MX</title>
+</head>
+
+<body>
+
+  <header id="top-bar">
+    <div class="menu-filtros">
+      <div class="contenedor-logo-nombre clearfix">
+        <img src="img/logo.png" alt="logo" />
+        <span class="titulo">Inventario</span>
       </div>
-    </header>
-
-    <div class="sidebar">
-        <center>
-          <div class="atras-sidebar">
-            <a href="pantalla_principal.html"><i class="fas fa-arrow-left"></i></a>
-          </div>
-        </center>
-
-        <!-- <div class="filtros-sidebar">
-          <div class="busqueda-contenedor">
-            <i class="material-icons">search</i>
-            <input class="busqueda" name="Buscar" placeholder="Búsqueda" type="text">
-          </div>
-          <div class="filtros-select">
-            <select id="tipo">
-              <option value="precio" selected>Precio</option>
-              <option value="fraccionamiento">Fraccionamiento</option>
-              <option value="recamaras">N° de Recamaras</option>
-              <option value="banios">N° de Baños</option>
-              <option value="plantas">N° de Plantas</option>
-              <option value="descripcion">Descripción</option>
-              <option value="terreno">Terreno</option>
-              <option value="construcción">Construcción</option>
-            </select>
-          </div>
-
-          <div class="filtro-minimo">
-            <div class="filtro-minimo-contenedor">
-              <input type="text" class="minimo" id="minimo" required placeholder="Mínimo"/>
-            </div>
-          </div>
-          <div class="filtro-maximo">
-            <div class="filtro-maximo-contenedor">
-              <input type="text" class="maximo" id="maximo" required placeholder="Máximo"/>
-            </div>
-          </div>
-        </div> -->
+      <nav class="menu">
+        <span>
+          <a href="nuevo_inmueble.html">Nuevo</a>
+        </span>
+      </nav>
     </div>
+  </header>
 
-    <main id="main">
+  <div class="sidebar">
+    <center>
+      <div class="atras-sidebar">
+        <a href="pantalla_principal.html"><i class="fas fa-arrow-left"></i></a>
+      </div>
+    </center>
+  </div>
 
-    </main>
+  <main id="main">
 
-    <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase.js"></script>
-    <script src="js/inventario.js"></script>
-  </body>
+  </main>
+
+  <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase.js"></script>
+  <script src="js/inventario.js"></script>
+</body>
+
 </html>

@@ -1,101 +1,104 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="css/all.min.css">
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/sweetalert2.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-    <title>Inmobiliarias MX</title>
-  </head>
-  <body>
-    <div id="contenedor">
-      <form class="formulario">
-        <a href="index.html"><i class="fas fa-arrow-left"></i></a>
-        <img src="img/logo.png" class="logo" alt="logo">
-        <h1 class="titulo">Registro</h1>
-        <!--Campo Nombre-->
-        <div class="nombre clearfix">
-          <div class="icono">
-            <i class="fas fa-user"></i>
-          </div>
-          <div class="input">
-            <input type="text" class="nombre" id="nombre" required placeholder="Ingrese su Nombre Completo">
-          </div>
-        </div>
-        <!--Campo Mail-->
-        <div class="email mail-registro clearfix">
-          <div class="icono">
-            <i class="fas fa-envelope"></i>
-          </div>
-          <div class="input">
-            <input type="email" class="email" id="email" required placeholder="Ingrese su Correo Electrónico">
-          </div>
-        </div>
-        <!--Campo Numero-->
-        <div class="numero clearfix">
-          <div class="icono-select">
-            <i class="fas fa-phone"></i>
-          </div>
-          <div class="select">
-            <select id="lada">
-              <option value="521" selected>México +52</option>
-              <option value="1">E.U.A +1</option>
-            </select>
-          </div>
-          <div class="input-select-numero">
-            <input type="text" class="numero" id="numero" required placeholder="Número Telefónico">
-          </div>
-        </div>
-        <!--Campo Estado-->
-        <div class="estado clearfix">
-          <div class="icono">
-            <i class="fas fa-map-marker-alt"></i>
-          </div>
-          <div class="input-select">
-            <input type="text" class="estado" placeholder="Estado:" disabled>
-          </div>
-          <div class="select">
-            <select id="estado">
-              <option value="Aguascalientes" selected>Aguascalientes</option>
-            </select>
-          </div>
-        </div>
-        <!--Campo password-->
-        <div class="contrasena clearfix">
-          <div class="icono">
-            <i class="fas fa-key"></i>
-          </div>
-          <div class="input">
-            <input type="password" class="password" id="password" required placeholder="Ingrese una Contraseña">
-          </div>
-        </div>
-        <!--Campo Check password-->
-        <div class="contrasena clearfix">
-          <div class="icono">
-            <i class="fas fa-key"></i>
-          </div>
-          <div class="input">
-            <input type="password" class="password" id="passwordConfirm" required placeholder="Confirme la Contraseña">
-          </div>
-        </div>
-        <!--Campo Clave de Activacion-->
-        <div class="contrasena clearfix">
-          <div class="icono">
-            <i class="fas fa-key"></i>
-          </div>
-          <div class="input">
-            <input type="password" class="password" id="activacion" required placeholder="Clave de Activación">
-          </div>
-        </div>
-        <div id="ingresar">
-          <button type="button" id="registrarse"><span class="registar">REGISTRARSE</span></button>
-        </div>
-      </form>
-    </div>
 
-    <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase.js"></script>
-    <script src="js/sweetalert2.all.min.js"></script>
-    <script src="js/registrarse.js"></script>
-  </body>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="css/all.min.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/sweetalert2.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  <title>Inmobiliarias MX</title>
+</head>
+
+<body>
+  <div id="contenedor">
+    <form class="formulario">
+      <a href="index.html"><i class="fas fa-arrow-left"></i></a>
+      <img src="img/logo.png" class="logo" alt="logo">
+      <h1 class="titulo">Registro</h1>
+      <!--Campo Nombre-->
+      <div class="nombre clearfix">
+        <div class="icono">
+          <i class="fas fa-user"></i>
+        </div>
+        <div class="input">
+          <input type="text" class="nombre" id="nombre" required placeholder="Ingrese su Nombre Completo">
+        </div>
+      </div>
+      <!--Campo Mail-->
+      <div class="email mail-registro clearfix">
+        <div class="icono">
+          <i class="fas fa-envelope"></i>
+        </div>
+        <div class="input">
+          <input type="email" class="email" id="email" required placeholder="Ingrese su Correo Electrónico">
+        </div>
+      </div>
+      <!--Campo Numero-->
+      <div class="numero clearfix">
+        <div class="icono-select">
+          <i class="fas fa-phone"></i>
+        </div>
+        <div class="select">
+          <select id="lada">
+            <option value="521" selected>México +52</option>
+            <option value="1">E.U.A +1</option>
+          </select>
+        </div>
+        <div class="input-select-numero">
+          <input type="text" class="numero" id="numero" required placeholder="Número Telefónico">
+        </div>
+      </div>
+      <!--Campo Estado-->
+      <div class="estado clearfix">
+        <div class="icono">
+          <i class="fas fa-map-marker-alt"></i>
+        </div>
+        <div class="input-select">
+          <input type="text" class="estado" placeholder="Estado:" disabled>
+        </div>
+        <div class="select">
+          <select id="estado">
+            <option value="Aguascalientes" selected>Aguascalientes</option>
+          </select>
+        </div>
+      </div>
+      <!--Campo password-->
+      <div class="contrasena clearfix">
+        <div class="icono">
+          <i class="fas fa-key"></i>
+        </div>
+        <div class="input">
+          <input type="password" class="password" id="password" required placeholder="Ingrese una Contraseña">
+        </div>
+      </div>
+      <!--Campo Check password-->
+      <div class="contrasena clearfix">
+        <div class="icono">
+          <i class="fas fa-key"></i>
+        </div>
+        <div class="input">
+          <input type="password" class="password" id="passwordConfirm" required placeholder="Confirme la Contraseña">
+        </div>
+      </div>
+      <!--Campo Clave de Activacion-->
+      <div class="contrasena clearfix">
+        <div class="icono">
+          <i class="fas fa-key"></i>
+        </div>
+        <div class="input">
+          <input type="password" class="password" id="activacion" required placeholder="Clave de Activación">
+        </div>
+      </div>
+      <div id="ingresar">
+        <button type="button" id="registrarse"><span class="registar">REGISTRARSE</span></button>
+      </div>
+    </form>
+  </div>
+
+  <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase.js"></script>
+  <script src="js/sweetalert2.all.min.js"></script>
+  <script src="js/registrarse.js"></script>
+</body>
+
 </html>

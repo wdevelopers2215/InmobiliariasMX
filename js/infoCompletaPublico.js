@@ -25,7 +25,7 @@
     }
     if (params["id"]) {
       var casaid = params["id"];
-      // console.log(casaid);
+      
     } else {
       console.log("No se envió el parámetro variable");
     }
@@ -52,9 +52,6 @@
       var casa = snapshot.val();
       var keyp = snapshot.key;
       storage.child(casa.userId + casa.id + "1").getDownloadURL().then(function(url) {
-          /*src = url;
-          console.log(casa.userId + casa.id + "1" + " " + url);
-          crearItem(casa, url);*/
           imgGrande.src = url;
         }).catch(function(error) {
           // imgGrande.src = "img/image_off.png";
@@ -84,10 +81,6 @@
           <p id="descripcion">${casa.descripcion}</p>
           <p id="precioPublico"><span class="precioNumber">${precio} MXN</span></p>
         `;
-
-        /*<p id="contacto">Contacto</p>
-        <p id="correo">Correo: ${casa.correoUsuario}</p>
-        <p id="telefono">Teléfono: ${casa.numeroUsuario}</p>*/
 
         let abajo = `
           <div class="hr"></div>
@@ -146,7 +139,7 @@
           imgPerfil.src = url;
 
         }).catch(function(error) {
-
+          imgPerfil.src = "img/account_circle_grey.png";
         });
 
         document.getElementById("contenido-img-perfil").appendChild(imgPerfil);

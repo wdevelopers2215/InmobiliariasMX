@@ -1,137 +1,116 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="css/all.min.css" />
-    <link rel="stylesheet" href="css/main_styles.css" />
-    <link
-      href="https://fonts.googleapis.com/css?family=Open+Sans"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="css/placeholder.css" />
-    <title>InmobiliariasMX</title>
-  </head>
-  <body>
-    <header id="top-bar">
-      <div class="menu-filtros">
-        <div class="contenedor-logo-nombre clearfix">
-          <img src="img/logo.png" alt="logo" />
-          <span class="titulo">Venta</span>
-        </div>
-        <nav class="menu">
-          <span id="links" class="hidden">
-            <a id="habitacional">Habitacional</a>
-            <a id="comercial">Comercial</a>
-            <a id="rustico">Rustico</a>
-            <a id="terreno">Terreno</a>
-          </span>
-          <span class="loader_menu" id="loader_menu">
-            <div class="loader_menu_item">
-              <div class="background"></div>
-            </div>
-            <div class="loader_menu_item">
-              <div class="background"></div>
-            </div>
-            <div class="loader_menu_item">
-              <div class="background"></div>
-            </div>
-            <div class="loader_menu_item">
-              <div class="background"></div>
-            </div>
-          </span>
-        </nav>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="css/all.min.css" />
+  <link rel="stylesheet" href="css/main_styles.css" />
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <link rel="stylesheet" href="css/placeholder.css" />
+  <title>Inmobiliarias MX</title>
+</head>
+
+<body>
+  <header id="top-bar">
+    <div class="menu-filtros">
+      <div class="contenedor-logo-nombre clearfix">
+        <img src="img/logo.png" alt="logo" />
+        <span class="titulo">Venta</span>
       </div>
-    </header>
-
-    <div class="sidebar">
-      <center>
-        <div class="atras-sidebar">
-          <a href="pantalla_principal.html" id="back"
-            ><i class="fas fa-arrow-left"></i
-          ></a>
-        </div>
-      </center>
-
-      <div class="filtros-sidebar">
-        <div class="busqueda-contenedor hidden" id="busqueda">
-          <i class="material-icons">search</i>
-          <input
-            class="busqueda"
-            name="Buscar"
-            id="IF"
-            placeholder="Búsqueda"
-            type="text"
-          />
-        </div>
-        <div class="loader_sidebar_items" id="loader_search">
-          <div class="background"></div>
-        </div>
-        <div class="filtros-select hidden" id="filtros">
-          <select id="tipo">
-            <option selected value="Sin Filtro">Filtrar</option>
-            <option value="precio">Precio</option>
-            <option value="fraccionamiento">Fraccionamiento</option>
-            <option value="recamaras">N° de Recamaras</option>
-            <option value="banios">N° de Baños</option>
-            <option value="plantas">N° de Plantas</option>
-            <!-- <option value="descripcion">Descripción</option> -->
-            <option value="terreno">Terreno</option>
-            <option value="construcción">Construcción</option>
-          </select>
-        </div>
-
-        <div class="loader_sidebar_items" id="loader_filtro">
-          <div class="background"></div>
-        </div>
-
-        <div class="filtro-minimo" id="precio_min">
-          <div class="filtro-minimo-contenedor">
-            <input
-              type="text"
-              class="minimo"
-              id="minimo"
-              required
-              placeholder="Mínimo"
-            />
+      <nav class="menu">
+        <span id="links" class="hidden">
+          <a id="habitacional">Habitacional</a>
+          <a id="comercial">Comercial</a>
+          <a id="rustico">Rustico</a>
+          <a id="terreno">Terreno</a>
+        </span>
+        <span class="loader_menu" id="loader_menu">
+          <div class="loader_menu_item">
+            <div class="background"></div>
           </div>
-        </div>
-        <div class="filtro-maximo" id="precio_max">
-          <div class="filtro-maximo-contenedor">
-            <input
-              type="text"
-              class="maximo"
-              id="maximo"
-              required
-              placeholder="Máximo"
-            />
+          <div class="loader_menu_item">
+            <div class="background"></div>
           </div>
+          <div class="loader_menu_item">
+            <div class="background"></div>
+          </div>
+          <div class="loader_menu_item">
+            <div class="background"></div>
+          </div>
+        </span>
+      </nav>
+    </div>
+  </header>
+
+  <div class="sidebar">
+    <center>
+      <div class="atras-sidebar">
+        <a href="pantalla_principal.html" id="back"><i class="fas fa-arrow-left"></i></a>
+      </div>
+    </center>
+
+    <div class="filtros-sidebar">
+      <div class="busqueda-contenedor hidden" id="busqueda">
+        <i class="material-icons">search</i>
+        <input class="busqueda" name="Buscar" id="IF" placeholder="Búsqueda" type="text" />
+      </div>
+      <div class="loader_sidebar_items" id="loader_search">
+        <div class="background"></div>
+      </div>
+      <div class="filtros-select hidden" id="filtros">
+        <select id="tipo">
+          <option selected value="Sin Filtro">Filtrar</option>
+          <option value="precio">Precio</option>
+          <option value="fraccionamiento">Fraccionamiento</option>
+          <option value="recamaras">N° de Recamaras</option>
+          <option value="banios">N° de Baños</option>
+          <option value="plantas">N° de Plantas</option>
+          <!-- <option value="descripcion">Descripción</option> -->
+          <option value="terreno">Terreno</option>
+          <option value="construcción">Construcción</option>
+        </select>
+      </div>
+
+      <div class="loader_sidebar_items" id="loader_filtro">
+        <div class="background"></div>
+      </div>
+
+      <div class="filtro-minimo" id="precio_min">
+        <div class="filtro-minimo-contenedor">
+          <input type="text" class="minimo" id="minimo" required placeholder="Mínimo" />
+        </div>
+      </div>
+      <div class="filtro-maximo" id="precio_max">
+        <div class="filtro-maximo-contenedor">
+          <input type="text" class="maximo" id="maximo" required placeholder="Máximo" />
         </div>
       </div>
     </div>
+  </div>
 
-    <main id="main"></main>
-    <center><div id="placeholder"></div></center>
+  <main id="main"></main>
+  <center>
+    <div id="placeholder"></div>
+  </center>
 
-    <div class="contenedor-paginado">
-      <center>
-        <section id="paginado" class="hidden">
-          <i class="fas fa-angle-double-left arrow" id="al"></i>
-          <p id="numpag">1</p>
-          <i class="fas fa-angle-double-right arrow" id="ar"></i>
-        </section>
-        <div class="pag" id="loader_pag">
-          <div class="background"></div>
-        </div>
-      </center>
-    </div>
+  <div class="contenedor-paginado">
+    <center>
+      <section id="paginado" class="hidden">
+        <i class="fas fa-angle-double-left arrow" id="al"></i>
+        <p id="numpag">1</p>
+        <i class="fas fa-angle-double-right arrow" id="ar"></i>
+      </section>
+      <div class="pag" id="loader_pag">
+        <div class="background"></div>
+      </div>
+    </center>
+  </div>
 
-    <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase.js"></script>
-    <script src="js/placeholder.js"></script>
-    <script src="js/venta.js"></script>
-  </body>
+  <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase.js"></script>
+  <script src="js/placeholder.js"></script>
+  <script src="js/venta.js"></script>
+</body>
+
 </html>

@@ -23,8 +23,6 @@ let imgPropiedad3;
 let imgPropiedad4;
 let imgPropiedad5;
 
-let progress1, progress2, progress3, progress4, progress5;
-
 let imgBloobs = [];
 
 var marker;
@@ -48,8 +46,6 @@ let lugarSelecionado;
         topShadow.classList.remove("scroll");
       }
     };
-
-    //let dbRef = firebase.database().ref("Oferta/Aguascalientes");
 
     //Campos
     let calle = document.getElementById("calle");
@@ -206,10 +202,6 @@ let lugarSelecionado;
     });
 
     selecionarLugar.addEventListener("click", function() {
-      /*console.log(marker.getPosition().lat());
-      console.log(marker.getPosition().lng());
-      console.log(marker.getPosition());*/
-
       coordenadas = marker.getPosition().lat() + "," + marker.getPosition().lng();
       lugarSelecionado = infowindow.getContent();
       placeSelecionada.innerHTML = lugarSelecionado;
@@ -350,15 +342,15 @@ let lugarSelecionado;
 
                      if(imgBloobs.length === 5) {
                        var uploadImage = storageRef.child("fotos/" + userId + idOferta + 1).put(imgBloobs[0]).then(function(snapshot) {
-                         console.log("1");
+                         
                          var uploadImage = storageRef.child("fotos/" + userId + idOferta + 2).put(imgBloobs[1]).then(function(snapshot) {
-                           console.log("2");
+                           
                            var uploadImage = storageRef.child("fotos/" + userId + idOferta + 3).put(imgBloobs[2]).then(function(snapshot) {
-                             console.log("3");
+                             
                              var uploadImage = storageRef.child("fotos/" + userId + idOferta + 4).put(imgBloobs[3]).then(function(snapshot) {
-                               console.log("4");
+                               
                                var uploadImage = storageRef.child("fotos/" + userId + idOferta + 5).put(imgBloobs[4]).then(function(snapshot) {
-                                 console.log("5");
+                                 
 
                                  swal.close();
                                  location.href = "inventario.html";
@@ -369,13 +361,13 @@ let lugarSelecionado;
                        });
                      } else if(imgBloobs.length === 4) {
                        var uploadImage = storageRef.child("fotos/" + userId + idOferta + 1).put(imgBloobs[0]).then(function(snapshot) {
-                         console.log("1");
+                         
                          var uploadImage = storageRef.child("fotos/" + userId + idOferta + 2).put(imgBloobs[1]).then(function(snapshot) {
-                           console.log("2");
+                           
                            var uploadImage = storageRef.child("fotos/" + userId + idOferta + 3).put(imgBloobs[2]).then(function(snapshot) {
-                             console.log("3");
+                             
                              var uploadImage = storageRef.child("fotos/" + userId + idOferta + 4).put(imgBloobs[3]).then(function(snapshot) {
-                               console.log("4");
+                               
                                swal.close();
                                location.href = "inventario.html";
                              });
@@ -384,11 +376,11 @@ let lugarSelecionado;
                        });
                      } else if(imgBloobs.length === 3) {
                        var uploadImage = storageRef.child("fotos/" + userId + idOferta + 1).put(imgBloobs[0]).then(function(snapshot) {
-                         console.log("1");
+                         
                          var uploadImage = storageRef.child("fotos/" + userId + idOferta + 2).put(imgBloobs[1]).then(function(snapshot) {
-                           console.log("2");
+                           
                            var uploadImage = storageRef.child("fotos/" + userId + idOferta + 3).put(imgBloobs[2]).then(function(snapshot) {
-                             console.log("3");
+                             
                              swal.close();
                              location.href = "inventario.html";
                            });
@@ -396,16 +388,16 @@ let lugarSelecionado;
                        });
                      } else if(imgBloobs.length === 2) {
                        var uploadImage = storageRef.child("fotos/" + userId + idOferta + 1).put(imgBloobs[0]).then(function(snapshot) {
-                         console.log("1");
+                         
                          var uploadImage = storageRef.child("fotos/" + userId + idOferta + 2).put(imgBloobs[1]).then(function(snapshot) {
-                           console.log("2");
+                           
                            swal.close();
                            location.href = "inventario.html";
                          });
                        });
                      } else if(imgBloobs.length === 1) {
                        var uploadImage = storageRef.child("fotos/" + userId + idOferta + 1).put(imgBloobs[0]).then(function(snapshot) {
-                         console.log("1");
+                         
                          swal.close();
                          location.href = "inventario.html";
                        });
@@ -503,11 +495,8 @@ let lugarSelecionado;
       var cropper = img.data('cropper');
       var cropeddImg = cropper.getCroppedCanvas();
       cropeddImg.toBlob(function (blob) {
-        //let uploadImage = storageRef.child("fotos/" + userId + idOferta + numeroImg).put(blob);
         imgBloobs.push(blob);
       });
-      /*let img = e.target.files[0];
-      let uploadImage = storageRef.child("prueba/" + "img1").put(img);*/
       numImg(numeroImg, cropeddImg);
       modalImg.style.display = "none";
 
@@ -536,8 +525,6 @@ function initMap() {
   map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
 
   infowindow = new google.maps.InfoWindow();
-  /*var infowindowContent = document.getElementById('infowindow-content');
-  infowindow.setContent(infowindowContent);*/
 
   var geocoder = new google.maps.Geocoder;
 
@@ -570,16 +557,10 @@ function initMap() {
   }
 
   marker.addListener("drag", function(event) {
-    /*document.getElementById('lat').innerHTML = event.latLng.lat();
-    document.getElementById('lng').innerHTML = event.latLng.lng();*/
-
     infowindow.close();
   });
 
   marker.addListener("dragend", function(event) {
-    /*document.getElementById('lat').innerHTML = event.latLng.lat();
-    document.getElementById('lng').innerHTML = event.latLng.lng();*/
-
     geocoder.geocode({'latLng': marker.getPosition()}, function (results, status) {
         if (status == google.maps.GeocoderStatus.OK) {
             infowindow.setContent(results[0].formatted_address);
@@ -612,22 +593,6 @@ function initMap() {
       infowindow.open(map, marker);
       map.setCenter(results[0].geometry.location);
       map.setZoom(16);
-
-      /*map.setZoom(11);
-      map.setCenter(results[0].geometry.location);
-
-      // Set the position of the marker using the place ID and location.
-      marker.setPlace({
-        placeId: place.place_id,
-        location: results[0].geometry.location});
-
-      marker.setVisible(true);
-
-      infowindowContent.children['place-name'].textContent = place.name;
-      infowindowContent.children['place-id'].textContent = place.place_id;
-      infowindowContent.children['place-address'].textContent = results[0].formatted_address;
-
-      infowindow.open(map, marker);*/
     });
   });
 }

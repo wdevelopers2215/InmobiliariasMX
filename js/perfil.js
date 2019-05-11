@@ -1,11 +1,10 @@
-
 let userId;
 var img;
 
-(function(){
+(function () {
   'use strict';
 
-  document.addEventListener('DOMContentLoaded', function(){
+  document.addEventListener('DOMContentLoaded', function () {
 
     var config = {
       apiKey: "AIzaSyBYJJPXZGJYJgNdZIaIAXZZ0DE-3DsfSYw",
@@ -23,14 +22,14 @@ var img;
     let divName = document.createElement("div");
     divName.setAttribute("id", "name");
 
-    firebase.auth().onAuthStateChanged(function(user) {
+    firebase.auth().onAuthStateChanged(function (user) {
       if (user) {
 
         userId = user.uid;
 
         var dbRef = firebase.database().ref("Usuarios/" + userId + "/Datos_Usuario");
 
-        dbRef.on("value", function(snapshot) {
+        dbRef.on("value", function (snapshot) {
           var usuario = snapshot.val();
           var key = snapshot.key;
 
@@ -63,18 +62,18 @@ var img;
     let guardarCroppedImg = document.getElementById("guardarImg");
     let span = document.getElementById("close");
 
-    span.onclick = function() {
+    span.onclick = function () {
       modalImg.style.display = "none";
     }
 
     //Cerrar el modal cuando de clic en cualquier parte de la pantalla
-    window.onclick = function(event) {
+    window.onclick = function (event) {
       if (event.target === modalImg) {
         modalImg.style.display = "none";
       }
     }
 
-    inputImg.addEventListener("change", function(e) {
+    inputImg.addEventListener("change", function (e) {
       let imgPropiedadCropper = document.getElementById("img-propiedad-cropper");
       img = $("#img-propiedad-cropper");
       img.cropper("destroy");
@@ -88,7 +87,7 @@ var img;
       $('input[type="file"]').val("");
     });
 
-    guardarCroppedImg.addEventListener("click", function(e) {
+    guardarCroppedImg.addEventListener("click", function (e) {
       modalImg.style.display = "none";
       swal({
         title: "Guardando, Por Favor Espere",
@@ -100,7 +99,7 @@ var img;
       var cropeddImg = cropper.getCroppedCanvas();
       cropeddImg.toBlob(function (blob) {
         var storageRef = firebase.storage().ref();
-        let uploadImage = storageRef.child("profile_pictures/" + userId + "profilePicture").put(blob).then(function(snapshot) {
+        let uploadImage = storageRef.child("profile_pictures/" + userId + "profilePicture").put(blob).then(function (snapshot) {
           swal.close();
           imgPerfil.src = cropeddImg.toDataURL();
         });

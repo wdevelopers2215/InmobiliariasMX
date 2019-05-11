@@ -6,34 +6,13 @@ exports.win;
 
 // mainWindow createWindow fn
 exports.createWindow = () => {
-  //Session from new partition
-  // let appSession = session.fromPartition("partition1");
 
   this.win = new BrowserWindow({
     minHeight: 300,
     minWidth: 1200,
-    icon: `${__dirname}/assets/icons/64x64.png`
+    icon: `${__dirname}/assets/icons/64x64.png`,
+    webPreferences: { nodeIntegration: true }
   });
-
-  //
-
-  // session.defaultSession.cookies.set(cookie, error => {
-  //   if (error) console.error(error);
-  // });
-
-  // session.defaultSession.cookies.get(
-  //   { url: "http://www.github.com" },
-  //   (error, cookies) => {
-  //     console.log(error, cookies);
-  //   }
-  // );
-
-  // session.defaultSession.cookies.get({}, (error, cookies) => {
-  //   console.log(error, cookies);
-  // });
-
-  // let mainSession = this.win.webContents.session;
-  // mainSession.clearStorageData();
 
   this.win.maximize();
 

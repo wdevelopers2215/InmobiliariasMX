@@ -60,7 +60,7 @@ let campoNumInmobiliario;
     }
     if (params["id"]) {
       casaid = params["id"];
-      // console.log(casaid);
+      
     } else {
       console.log("No se envió el parámetro variable");
     }
@@ -222,12 +222,7 @@ let campoNumInmobiliario;
               confirmButtonText: 'Si'
             }).then((result) => {
               if (result.value) {
-                /*Swal.fire(
-                  'Deleted!',
-                  'Your file has been deleted.',
-                  'success'
-                )*/
-
+                
                 let borrarImg1 = new Promise(function(resolve, reject) {
                   storage.child(userId + casaid + 1).delete().then(function() {
                     resolve();
@@ -287,7 +282,7 @@ let campoNumInmobiliario;
                 Promise.all([borrarImg1, borrarImg2, borrarImg3, borrarImg4, borrarImg5, borrarDatos, borrarDatosPublico]).then(function() {
                   location.href = "inventario.html";
                 }).catch(function(error) {
-                  // console.log("Error");
+                  
                 });
 
               }
@@ -296,9 +291,6 @@ let campoNumInmobiliario;
           });
 
           storage.child(casa.userId + casa.id + "1").getDownloadURL().then(function(url) {
-              /*src = url;
-              console.log(casa.userId + casa.id + "1" + " " + url);
-              crearItem(casa, url);*/
               imgGrande.src = url;
             }).catch(function(error) {
 
@@ -330,10 +322,6 @@ let campoNumInmobiliario;
                 <p id="precio"><span class="precioName">Precio: </span><span class="precioNumber">${precio} MXN</span></p><i class="fas fa-map-marked-alt mapa" id="goMaps"></i>
               </div>
             `;
-
-            /*<p id="contacto">Contacto</p>
-            <p id="correo">Correo: ${casa.correoUsuario}</p>
-            <p id="telefono">Teléfono: ${casa.numeroUsuario}</p>*/
 
             let abajo = `
               <div class="hr" id="hr-propio"></div>

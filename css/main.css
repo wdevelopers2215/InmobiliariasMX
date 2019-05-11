@@ -10,7 +10,6 @@ html {
 }
 
 body {
-  display: none;
   background-image: url(../img/chairs.jpg);
   background-position: top center;
   background-size: cover;
@@ -34,6 +33,10 @@ body {
 div.contenedor {
   padding-top: 50px;
   padding-bottom: 90px;
+}
+
+div.form-inicio-sesion {
+  display: none;
 }
 
 /*Inicio de Sesion y Registro*/

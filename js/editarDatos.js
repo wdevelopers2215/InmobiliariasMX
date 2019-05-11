@@ -23,8 +23,6 @@ let imgPropiedad3;
 let imgPropiedad4;
 let imgPropiedad5;
 
-let progress1, progress2, progress3, progress4, progress5;
-
 let imgBloobs = [];
 
 var marker;
@@ -53,6 +51,8 @@ let fechaAnio;
 
   document.addEventListener('DOMContentLoaded', function(){
 
+
+    //Obtener id de la propiedad
     var paramstr = window.location.search.substr(1);
     var paramarr = paramstr.split("&");
     var params = {};
@@ -63,13 +63,14 @@ let fechaAnio;
     }
     if (params["id"]) {
       var casaid = params["id"];
-      console.log(casaid);
+      
     } else {
       console.log("No se envió el parámetro variable");
     }
 
-    var topShadow = document.getElementById("top-nuevo_inmueble");
 
+    //Agregar sombra al top.bar al hacer scroll
+    var topShadow = document.getElementById("top-nuevo_inmueble");
     window.onscroll = function() {
       "use strict";
       if (document.body.scrollTop >= 20 || document.documentElement.scrollTop >= 20) {
@@ -78,9 +79,6 @@ let fechaAnio;
         topShadow.classList.remove("scroll");
       }
     };
-
-
-    //let dbRef = firebase.database().ref("Oferta/Aguascalientes");
 
     //Campos
     let calle = document.getElementById("calle");
@@ -123,6 +121,7 @@ let fechaAnio;
     let btnImg4 = document.getElementById("butonImg4");
     let btnImg5 = document.getElementById("butonImg5");
 
+    //Elementos para selecionar imagen
     let guardarCroppedImg = document.getElementById("guardarImg");
     let selecionarLugar = document.getElementById("selecionarLugar");
 
@@ -148,6 +147,7 @@ let fechaAnio;
 
     let numeroImg;
 
+    //Modal de google maps
     let modalMaps = document.getElementById("modalMaps");
     let closeModalMaps = document.getElementById("close-modalMaps");
 
@@ -160,16 +160,13 @@ let fechaAnio;
     });
 
     selecionarLugar.addEventListener("click", function() {
-      /*console.log(marker.getPosition().lat());
-      console.log(marker.getPosition().lng());
-      console.log(marker.getPosition());*/
-
       coordenadas = marker.getPosition().lat() + "," + marker.getPosition().lng();
       lugarSelecionado = infowindow.getContent();
       placeSelecionada.innerHTML = lugarSelecionado;
       modalMaps.style.display = "none";
     });
 
+    //Validar campos
     $('#precio').keyup(function(event) {
       if(event.which >= 37 && event.which <= 40) return;
       $(this).val(function(index, value) {
@@ -416,15 +413,15 @@ let fechaAnio;
 
                      if(imgBloobs.length === 5) {
                        var uploadImage = storageRef.child("fotos/" + userId + idOferta + 1).put(imgBloobs[0]).then(function(snapshot) {
-                         console.log("1");
+                         
                          var uploadImage = storageRef.child("fotos/" + userId + idOferta + 2).put(imgBloobs[1]).then(function(snapshot) {
-                           console.log("2");
+                           
                            var uploadImage = storageRef.child("fotos/" + userId + idOferta + 3).put(imgBloobs[2]).then(function(snapshot) {
-                             console.log("3");
+                             
                              var uploadImage = storageRef.child("fotos/" + userId + idOferta + 4).put(imgBloobs[3]).then(function(snapshot) {
-                               console.log("4");
+                               
                                var uploadImage = storageRef.child("fotos/" + userId + idOferta + 5).put(imgBloobs[4]).then(function(snapshot) {
-                                 console.log("5");
+                                 
 
                                  swal.close();
                                  location.href = "inventario.html";
@@ -435,13 +432,13 @@ let fechaAnio;
                        });
                      } else if(imgBloobs.length === 4) {
                        var uploadImage = storageRef.child("fotos/" + userId + idOferta + 1).put(imgBloobs[0]).then(function(snapshot) {
-                         console.log("1");
+                         
                          var uploadImage = storageRef.child("fotos/" + userId + idOferta + 2).put(imgBloobs[1]).then(function(snapshot) {
-                           console.log("2");
+                           
                            var uploadImage = storageRef.child("fotos/" + userId + idOferta + 3).put(imgBloobs[2]).then(function(snapshot) {
-                             console.log("3");
+                             
                              var uploadImage = storageRef.child("fotos/" + userId + idOferta + 4).put(imgBloobs[3]).then(function(snapshot) {
-                               console.log("4");
+                               
                                swal.close();
                                location.href = "inventario.html";
                              });
@@ -450,11 +447,11 @@ let fechaAnio;
                        });
                      } else if(imgBloobs.length === 3) {
                        var uploadImage = storageRef.child("fotos/" + userId + idOferta + 1).put(imgBloobs[0]).then(function(snapshot) {
-                         console.log("1");
+                         
                          var uploadImage = storageRef.child("fotos/" + userId + idOferta + 2).put(imgBloobs[1]).then(function(snapshot) {
-                           console.log("2");
+                           
                            var uploadImage = storageRef.child("fotos/" + userId + idOferta + 3).put(imgBloobs[2]).then(function(snapshot) {
-                             console.log("3");
+                             
                              swal.close();
                              location.href = "inventario.html";
                            });
@@ -462,16 +459,16 @@ let fechaAnio;
                        });
                      } else if(imgBloobs.length === 2) {
                        var uploadImage = storageRef.child("fotos/" + userId + idOferta + 1).put(imgBloobs[0]).then(function(snapshot) {
-                         console.log("1");
+                         
                          var uploadImage = storageRef.child("fotos/" + userId + idOferta + 2).put(imgBloobs[1]).then(function(snapshot) {
-                           console.log("2");
+                           
                            swal.close();
                            location.href = "inventario.html";
                          });
                        });
                      } else if(imgBloobs.length === 1) {
                        var uploadImage = storageRef.child("fotos/" + userId + idOferta + 1).put(imgBloobs[0]).then(function(snapshot) {
-                         console.log("1");
+                         
                          swal.close();
                          location.href = "inventario.html";
                        });

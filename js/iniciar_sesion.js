@@ -20,8 +20,8 @@ firebase.initializeApp(config);
       if (user) {
         location.href = "pantalla_principal.html";
       } else {
-        let body = document.querySelector("body");
-        body.style.display = "block";
+        let form = document.getElementsByClassName("form-inicio-sesion");
+        form[0].style.display = "block";
       }
     });
 
@@ -58,34 +58,6 @@ firebase.initializeApp(config);
       }
 
     });
-
-    /*OBTENER IP PUBLICA
-    const ipAPI = 'https://api.ipify.org?format=json';
-    function getIp() {
-      fetch(ipAPI).then(function(response) {
-        return response.json();
-      }).then(function(data){
-        showIp(data.ip);
-      }).catch(function(err) {
-
-      });
-    }
-
-    getIp();
-
-    function showIp(data) {
-      console.log(data);
-    }*/
-
-    /*Obtener numero de serie de pc
-    var sys = require('util')
-    var exec = require('child_process').exec;
-    function puts(error, stdout, stderr) {
-        let datos = stdout.split(' ');
-        console.log(datos[6]);
-    }
-
-    exec("wmic DISKDRIVE get SerialNumber", puts);*/
 
   });
 

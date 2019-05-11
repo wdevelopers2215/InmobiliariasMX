@@ -1,267 +1,273 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="css/all.min.css">
-    <link rel="stylesheet" href="css/nuevo_inmueble.css">
-    <link rel="stylesheet" href="css/cropper.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-    <title>InmobiliariasMX</title>
-  </head>
-  <body>
-    <div class="top-menu-nuevo_inmueble" id="top-nuevo_inmueble">
-      <div class="contenedor-top-menu-nuevo_inmueble">
-        <div class="side-left">
-          <a href="inventario.html"><i class="fas fa-arrow-left inventario"></i></a>
-          <h1 class="titulo nuevo-inmueble-title">Editar Datos</h1>
-        </div>
-        <div class="side-right clearfix">
-          <div class="circle-buttons">
-            <button class="circle-button ripple" id="maps">
-              <i class="fas fa-map-marker-alt picker"></i>
-            </button>
-            <button class="circle-button ripple" id="guardar">
-              <i class="fas fa-check"></i>
-            </button>
-            <button class="circle-button ripple" id="cancelar">
-              <i class="fas fa-times cancel"></i>
-            </button>
-          </div>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/all.min.css">
+  <link rel="stylesheet" href="css/nuevo_inmueble.css">
+  <link rel="stylesheet" href="css/cropper.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  <title>Inmobiliarias MX</title>
+</head>
+
+<body>
+  <div class="top-menu-nuevo_inmueble" id="top-nuevo_inmueble">
+    <div class="contenedor-top-menu-nuevo_inmueble">
+      <div class="side-left">
+        <a href="inventario.html"><i class="fas fa-arrow-left inventario"></i></a>
+        <h1 class="titulo nuevo-inmueble-title">Editar Datos</h1>
+      </div>
+      <div class="side-right clearfix">
+        <div class="circle-buttons">
+          <button class="circle-button ripple" id="maps">
+            <i class="fas fa-map-marker-alt picker"></i>
+          </button>
+          <button class="circle-button ripple" id="guardar">
+            <i class="fas fa-check"></i>
+          </button>
+          <button class="circle-button ripple" id="cancelar">
+            <i class="fas fa-times cancel"></i>
+          </button>
         </div>
       </div>
     </div>
-    <div class="contenedor-forms-campos">
-      <form novalidate>
-        <div class="campos">
-          <div class="campo">
-            <input type="text" id="calle" required>
+  </div>
+  <div class="contenedor-forms-campos">
+    <form novalidate>
+      <div class="campos">
+        <div class="campo">
+          <input type="text" id="calle" required>
+          <span class="barra"></span>
+          <label>Calle</label>
+        </div>
+        <div class="campo">
+          <input type="text" id="fraccionamiento" required>
+          <span class="barra"></span>
+          <label>Fraccionamiento/Colonia</label>
+        </div>
+
+        <div class="campo-doble-contenedor">
+          <div class="campo campo-doble">
+            <input type="text" id="numInt" required>
             <span class="barra"></span>
-            <label>Calle</label>
+            <label>Número Inerior</label>
           </div>
-          <div class="campo">
-            <input type="text" id="fraccionamiento" required>
+          <div class="campo campo-doble">
+            <input type="text" id="numExt" required>
             <span class="barra"></span>
-            <label>Fraccionamiento/Colonia</label>
-          </div>
-
-          <div class="campo-doble-contenedor">
-            <div class="campo campo-doble">
-              <input type="text" id="numInt" required>
-              <span class="barra"></span>
-              <label>Número Inerior</label>
-            </div>
-            <div class="campo campo-doble">
-              <input type="text" id="numExt" required>
-              <span class="barra"></span>
-              <label>Número Exterior</label>
-            </div>
-          </div>
-
-          <div class="campo-doble-contenedor">
-            <div class="campo campo-doble">
-              <input type="text" id="estadoLugar" required>
-              <span class="barra"></span>
-              <label>Estado</label>
-            </div>
-            <div class="campo campo-doble">
-              <input type="text" id="municipio" required>
-              <span class="barra"></span>
-              <label>Municipio</label>
-            </div>
-          </div>
-
-          <div class="campo-doble-contenedor">
-            <div class="campo campo-doble">
-              <input type="text" id="codigoPostal" required>
-              <span class="barra"></span>
-              <label>Código Postal</label>
-            </div>
-            <div class="campo campo-doble">
-              <input type="text" id="supTerreno" required>
-              <span class="barra"></span>
-              <label>Terreno</label>
-            </div>
-          </div>
-
-          <div class="campo-doble-contenedor">
-            <div class="campo campo-doble">
-              <input type="text" id="supConstruccion" required>
-              <span class="barra"></span>
-              <label>Construcción</label>
-            </div>
-            <div class="campo campo-doble">
-              <input type="text" id="nPlantas" required>
-              <span class="barra"></span>
-              <label>Número de Plantas</label>
-            </div>
-          </div>
-
-        </div>
-      </form>
-
-      <form novalidate>
-        <div class="campos">
-          <div class="campo-doble-contenedor">
-            <div class="campo campo-doble">
-              <input type="text" id="numRecamaras" required>
-              <span class="barra"></span>
-              <label>Número de Recamaras</label>
-            </div>
-            <div class="campo campo-doble">
-              <input type="text" id="numbanios" required>
-              <span class="barra"></span>
-              <label>Número de Baños</label>
-            </div>
-          </div>
-
-          <div class="campo-doble-contenedor">
-            <div class="campo campo-doble">
-              <input type="text" id="cantidadCarrosCochera" required>
-              <span class="barra"></span>
-              <label>Espacio para Autos</label>
-            </div>
-            <div class="campo campo-doble">
-              <input type="text" id="costeMantenimiento" required>
-              <span class="barra"></span>
-              <label>Mantenimiento</label>
-            </div>
-          </div>
-
-          <div class="campo-doble-contenedor">
-            <div class="campo campo-doble">
-              <input type="text" id="precio" required>
-              <span class="barra"></span>
-              <label>Precio</label>
-            </div>
-            <div class="campo campo-doble">
-              <input type="text" id="comision" required>
-              <span class="barra"></span>
-              <label>Porcentaje de Comisión</label>
-            </div>
-          </div>
-
-          <div class="selects">
-            <div class="select-option">
-              <h3>Amueblada:</h3>
-              <select id="amueblada">
-                <option value="Si" selected>Si</option>
-                <option value="No">No</option>
-              </select>
-            </div>
-
-            <div class="select-option">
-              <h3>Estado del Inmueble:</h3>
-              <select id="estadoVoR">
-                <option value="Venta" selected>Venta</option>
-                <option value="Renta">Renta</option>
-              </select>
-            </div>
-          </div>
-
-          <div class="selects">
-            <div class="select-option">
-              <h3>Tipo de Inmueble:</h3>
-              <select id="tipo">
-                <option value="habitacional" selected>Habitacional</option>
-                <option value="comercial">Comercial</option>
-                <option value="rustico">Rustico</option>
-                <option value="terreno">Terreno</option>
-              </select>
-            </div>
-
-            <div class="placepicker">
-              <h3>Lugar Seleccionado:</h3>
-              <p id="lugarSelect">Aún no ha seleccionado algún lugar</p>
-            </div>
+            <label>Número Exterior</label>
           </div>
         </div>
-      </form>
-    </div>
-    <div class="contenedor-descripcion">
-        <textarea placeholder="Descripción:" id="descripcion"></textarea>
-    </div>
-    <div class="contenedor-notas">
-      <textarea placeholder="Notas Adicionales:" id="notas"></textarea>
-    </div>
-    <div class="contenedor-seleccionar-imagenes">
-        <button class="circle-image-button ripple" id="butonImg1">
-          <i class="fas fa-image"></i>
-          <input type="file" accept="image/*" id="image-input1">
-        </button>
-        <button class="circle-image-button ripple" id="butonImg2">
-          <i class="fas fa-image"></i>
-          <input type="file" accept="image/*" id="image-input2">
-        </button>
-        <button class="circle-image-button ripple" id="butonImg3">
-          <i class="fas fa-image"></i>
-          <input type="file" accept="image/*" id="image-input3">
-        </button>
-        <button class="circle-image-button ripple" id="butonImg4">
-          <i class="fas fa-image"></i>
-          <input type="file" accept="image/*" id="image-input4">
-        </button>
-        <button class="circle-image-button ripple" id="butonImg5">
-          <i class="fas fa-image"></i>
-          <input type="file" accept="image/*" id="image-input5">
-        </button>
-    </div>
-    <!-- Modal Img -->
-    <div id="modalImg" class="modal">
-      <div class="modal-content">
-        <div class="modal-header clearfix">
-          <span id="close"><i class="fas fa-times"></i></span>
+
+        <div class="campo-doble-contenedor">
+          <div class="campo campo-doble">
+            <input type="text" id="estadoLugar" required>
+            <span class="barra"></span>
+            <label>Estado</label>
+          </div>
+          <div class="campo campo-doble">
+            <input type="text" id="municipio" required>
+            <span class="barra"></span>
+            <label>Municipio</label>
+          </div>
         </div>
-        <div class="modal-img">
-          <img id="img-propiedad-cropper" src="">
+
+        <div class="campo-doble-contenedor">
+          <div class="campo campo-doble">
+            <input type="text" id="codigoPostal" required>
+            <span class="barra"></span>
+            <label>Código Postal</label>
+          </div>
+          <div class="campo campo-doble">
+            <input type="text" id="supTerreno" required>
+            <span class="barra"></span>
+            <label>Terreno</label>
+          </div>
         </div>
-        <div class="modal-footer">
-          <center><button type="button" id="guardarImg" name="Guardar">Guardar</button></center>
+
+        <div class="campo-doble-contenedor">
+          <div class="campo campo-doble">
+            <input type="text" id="supConstruccion" required>
+            <span class="barra"></span>
+            <label>Construcción</label>
+          </div>
+          <div class="campo campo-doble">
+            <input type="text" id="nPlantas" required>
+            <span class="barra"></span>
+            <label>Número de Plantas</label>
+          </div>
+        </div>
+
+      </div>
+    </form>
+
+    <form novalidate>
+      <div class="campos">
+        <div class="campo-doble-contenedor">
+          <div class="campo campo-doble">
+            <input type="text" id="numRecamaras" required>
+            <span class="barra"></span>
+            <label>Número de Recamaras</label>
+          </div>
+          <div class="campo campo-doble">
+            <input type="text" id="numbanios" required>
+            <span class="barra"></span>
+            <label>Número de Baños</label>
+          </div>
+        </div>
+
+        <div class="campo-doble-contenedor">
+          <div class="campo campo-doble">
+            <input type="text" id="cantidadCarrosCochera" required>
+            <span class="barra"></span>
+            <label>Espacio para Autos</label>
+          </div>
+          <div class="campo campo-doble">
+            <input type="text" id="costeMantenimiento" required>
+            <span class="barra"></span>
+            <label>Mantenimiento</label>
+          </div>
+        </div>
+
+        <div class="campo-doble-contenedor">
+          <div class="campo campo-doble">
+            <input type="text" id="precio" required>
+            <span class="barra"></span>
+            <label>Precio</label>
+          </div>
+          <div class="campo campo-doble">
+            <input type="text" id="comision" required>
+            <span class="barra"></span>
+            <label>Porcentaje de Comisión</label>
+          </div>
+        </div>
+
+        <div class="selects">
+          <div class="select-option">
+            <h3>Amueblada:</h3>
+            <select id="amueblada">
+              <option value="Si" selected>Si</option>
+              <option value="No">No</option>
+            </select>
+          </div>
+
+          <div class="select-option">
+            <h3>Estado del Inmueble:</h3>
+            <select id="estadoVoR">
+              <option value="Venta" selected>Venta</option>
+              <option value="Renta">Renta</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="selects">
+          <div class="select-option">
+            <h3>Tipo de Inmueble:</h3>
+            <select id="tipo">
+              <option value="habitacional" selected>Habitacional</option>
+              <option value="comercial">Comercial</option>
+              <option value="rustico">Rustico</option>
+              <option value="terreno">Terreno</option>
+            </select>
+          </div>
+
+          <div class="placepicker">
+            <h3>Lugar Seleccionado:</h3>
+            <p id="lugarSelect">Aún no ha seleccionado algún lugar</p>
+          </div>
         </div>
       </div>
+    </form>
+  </div>
+  <div class="contenedor-descripcion">
+    <textarea placeholder="Descripción:" id="descripcion"></textarea>
+  </div>
+  <div class="contenedor-notas">
+    <textarea placeholder="Notas Adicionales:" id="notas"></textarea>
+  </div>
+  <div class="contenedor-seleccionar-imagenes">
+    <button class="circle-image-button ripple" id="butonImg1">
+      <i class="fas fa-image"></i>
+      <input type="file" accept="image/*" id="image-input1">
+    </button>
+    <button class="circle-image-button ripple" id="butonImg2">
+      <i class="fas fa-image"></i>
+      <input type="file" accept="image/*" id="image-input2">
+    </button>
+    <button class="circle-image-button ripple" id="butonImg3">
+      <i class="fas fa-image"></i>
+      <input type="file" accept="image/*" id="image-input3">
+    </button>
+    <button class="circle-image-button ripple" id="butonImg4">
+      <i class="fas fa-image"></i>
+      <input type="file" accept="image/*" id="image-input4">
+    </button>
+    <button class="circle-image-button ripple" id="butonImg5">
+      <i class="fas fa-image"></i>
+      <input type="file" accept="image/*" id="image-input5">
+    </button>
+  </div>
+  <!-- Modal Img -->
+  <div id="modalImg" class="modal">
+    <div class="modal-content">
+      <div class="modal-header clearfix">
+        <span id="close"><i class="fas fa-times"></i></span>
+      </div>
+      <div class="modal-img">
+        <img id="img-propiedad-cropper" src="">
+      </div>
+      <div class="modal-footer">
+        <center><button type="button" id="guardarImg" name="Guardar">Guardar</button></center>
+      </div>
     </div>
-    <div class="contenedor-imagenes">
-      <div class="contendor-img-propiedad" id="contenedor-img-propiedad1">
-        <img src="" id="contendor-img1" class="imgCropped">
-      </div>
-      <div class="contendor-img-propiedad" id="contenedor-img-propiedad2">
-        <img src="" id="contendor-img2" class="imgCropped">
-      </div>
-      <div class="contendor-img-propiedad" id="contenedor-img-propiedad3">
-        <img src="" id="contendor-img3" class="imgCropped">
-      </div>
-      <div class="contendor-img-propiedad" id="contenedor-img-propiedad4">
-        <img src="" id="contendor-img4" class="imgCropped">
-      </div>
-      <div class="contendor-img-propiedad" id="contenedor-img-propiedad5">
-        <img src="" id="contendor-img5" class="imgCropped">
-      </div>
+  </div>
+  <div class="contenedor-imagenes">
+    <div class="contendor-img-propiedad" id="contenedor-img-propiedad1">
+      <img src="" id="contendor-img1" class="imgCropped">
     </div>
+    <div class="contendor-img-propiedad" id="contenedor-img-propiedad2">
+      <img src="" id="contendor-img2" class="imgCropped">
+    </div>
+    <div class="contendor-img-propiedad" id="contenedor-img-propiedad3">
+      <img src="" id="contendor-img3" class="imgCropped">
+    </div>
+    <div class="contendor-img-propiedad" id="contenedor-img-propiedad4">
+      <img src="" id="contendor-img4" class="imgCropped">
+    </div>
+    <div class="contendor-img-propiedad" id="contenedor-img-propiedad5">
+      <img src="" id="contendor-img5" class="imgCropped">
+    </div>
+  </div>
 
-    <!--ModalMaps-->
-    <div id="modalMaps" class="modal">
-      <div class="modal-content">
-        <div class="modal-header clearfix">
-          <span id="close-modalMaps"><i class="fas fa-times"></i></span>
+  <!--ModalMaps-->
+  <div id="modalMaps" class="modal">
+    <div class="modal-content">
+      <div class="modal-header clearfix">
+        <span id="close-modalMaps"><i class="fas fa-times"></i></span>
+      </div>
+      <div class="modal-maps">
+        <div style="display: none">
+          <input id="pac-input" class="controls" type="text" placeholder="Buscar">
         </div>
-        <div class="modal-maps">
-          <div style="display: none">
-              <input id="pac-input" class="controls" type="text" placeholder="Buscar">
-          </div>
-          <div id="map"></div>
-        </div>
-        <div class="modal-footer">
-          <center><button type="button" id="selecionarLugar" name="Guardar">Seleccionar</button></center>
-        </div>
+        <div id="map"></div>
+      </div>
+      <div class="modal-footer">
+        <center><button type="button" id="selecionarLugar" name="Guardar">Seleccionar</button></center>
       </div>
     </div>
+  </div>
 
-    <script>window.$ = window.jQuery = require('./js/jquery-3.3.1.min.js');</script>
-    <script type="text/javascript" src="https://www.gstatic.com/firebasejs/5.7.0/firebase.js"></script>
-    <script type="text/javascript" src="js/sweetalert2.all.min.js"></script>
-    <script type="text/javascript" src="js/cropper.min.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDWwimwqf8iqMjtvr1uN0jl2Jrqo2FloP8&libraries=places&callback=initMap"
-        async defer></script>
-    <script type="text/javascript" src="js/editarDatos.js"></script>
-  </body>
+  <script>
+    window.$ = window.jQuery = require('./js/jquery-3.3.1.min.js');
+  </script>
+  <script type="text/javascript" src="https://www.gstatic.com/firebasejs/5.7.0/firebase.js"></script>
+  <script type="text/javascript" src="js/sweetalert2.all.min.js"></script>
+  <script type="text/javascript" src="js/cropper.min.js"></script>
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDWwimwqf8iqMjtvr1uN0jl2Jrqo2FloP8&libraries=places&callback=initMap"
+    async defer></script>
+  <script type="text/javascript" src="js/editarDatos.js"></script>
+</body>
+
 </html>

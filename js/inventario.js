@@ -40,8 +40,6 @@ const Swal = require('sweetalert2');
           let casa = snapshot.val();
           let key = snapshot.key;
 
-          console.log(key);
-
           articulo.setAttribute("id", key);
 
           let descripcion = casa.descripcion;
@@ -67,7 +65,7 @@ const Swal = require('sweetalert2');
           articulo.innerHTML = contenido;
           articulo.addEventListener("click", function(){
               var articleId = articulo.getAttribute("id");
-              console.log(articleId);
+              
               window.location = "infoCompletaPropio.html?id=" + articleId.toString();
           });
           document.getElementById("main").appendChild(articulo);

@@ -1,43 +1,48 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="css/all.min.css">
-    <link rel="stylesheet" href="css/perfil.css">
-    <link rel="stylesheet" href="css/cropper.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-    <title>InmobiliariasMX</title>
-  </head>
-  <body>
-    <div class="sidebar">
-      <a href="pantalla_principal.html"><i class="fas fa-arrow-left"></i></a>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/all.min.css">
+  <link rel="stylesheet" href="css/perfil.css">
+  <link rel="stylesheet" href="css/cropper.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  <title>InmobiliariasMX</title>
+</head>
+
+<body>
+  <div class="sidebar">
+    <a href="pantalla_principal.html"><i class="fas fa-arrow-left"></i></a>
+  </div>
+  <div class="contenedor">
+    <div class="contenedor-img clearfix" id="content-imgName">
+      <label for="porfile-image"><img src="img/account_circle_grey.png" id="imgPerfil"></label>
+      <input id="porfile-image" type="file" accept="image/*">
     </div>
-    <div class="contenedor">
-      <div class="contenedor-img clearfix" id="content-imgName">
-        <label for="porfile-image"><img src="img/account_circle_grey.png" id="imgPerfil"></label>
-        <input id="porfile-image" type="file" accept="image/*">
+    <div id="data"></div>
+  </div>
+  <!-- Modal Img -->
+  <div id="modalImg" class="modal">
+    <div class="modal-content">
+      <div class="modal-header clearfix">
+        <span id="close"><i class="fas fa-times"></i></span>
       </div>
-      <div id="data"></div>
-    </div>
-    <!-- Modal Img -->
-    <div id="modalImg" class="modal">
-      <div class="modal-content">
-        <div class="modal-header clearfix">
-          <span id="close"><i class="fas fa-times"></i></span>
-        </div>
-        <div class="modal-img">
-          <img id="img-propiedad-cropper" src="">
-        </div>
-        <div class="modal-footer">
-          <center><button type="button" id="guardarImg" name="Guardar">Guardar</button></center>
-        </div>
+      <div class="modal-img">
+        <img id="img-propiedad-cropper" src="">
+      </div>
+      <div class="modal-footer">
+        <center><button type="button" id="guardarImg" name="Guardar">Guardar</button></center>
       </div>
     </div>
-  </body>
-  <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase.js"></script>
-  <script>window.$ = window.jQuery = require('./js/jquery-3.3.1.min.js');</script>
-  <script type="text/javascript" src="js/sweetalert2.all.min.js"></script>
-  <script type="text/javascript" src="js/cropper.min.js"></script>
-  <script src="js/perfil.js"></script>
+  </div>
+</body>
+<script src="https://www.gstatic.com/firebasejs/5.7.0/firebase.js"></script>
+<script>
+  window.$ = window.jQuery = require('./js/jquery-3.3.1.min.js');
+</script>
+<script type="text/javascript" src="js/sweetalert2.all.min.js"></script>
+<script type="text/javascript" src="js/cropper.min.js"></script>
+<script src="js/perfil.js"></script>
+
 </html>
