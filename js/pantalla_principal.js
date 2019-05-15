@@ -79,6 +79,8 @@ function setCookie(nombre, valor) {
     let imgPerfil = document.getElementById("imgPerfil");
     // let contitems = 0;
 
+    let storagePorfilePropio = firebase.storage().ref("/profile_pictures");
+
     window.onscroll = function () {
       "use strict";
       if (
@@ -93,9 +95,11 @@ function setCookie(nombre, valor) {
 
     firebase.auth().onAuthStateChanged(function (user) {
       if (user) {
-        imgPerfil.src = `https://firebasestorage.googleapis.com/v0/b/inmobiliariasmx.appspot.com/o/profile_pictures%2F${
-          user.uid
-        }profilePicture?alt=media&token`;
+        storagePorfilePropio.child(user.uid + "profilePicture").getDownloadURL().then(function(url) {
+          imgPerfil.src = url;
+        }).catch(function(error) {
+          imgPerfil.src = "img/account_circle_grey.png";
+        });
 
         var ref = firebase
           .database()
@@ -337,7 +341,6 @@ function setCookie(nombre, valor) {
           return urlprofile;
         })
         .catch(function (error) {
-
           return "img/account_circle_grey.png";
         });
     }

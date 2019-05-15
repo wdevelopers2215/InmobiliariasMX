@@ -51,7 +51,7 @@ firebase.initializeApp(config);
         Swal('Error', 'La contraseña debe de contener minimo 6 caracteres', 'warning');
       } else if (password.value !== passwordConfirm.value) {
         Swal('Error', 'Las contraseñas deben de conicidr', 'warning');
-      } else if (activacion.value !== "BD755CBD8RVmGxeU") {
+      } else if (activacion.value !== "BD755CBD8RVmGxeU" && activacion.value !== "prueba-gratuita") {
         Swal('Error', 'Clave de Activación no valida', 'error');
       } else {
 

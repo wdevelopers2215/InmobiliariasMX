@@ -566,7 +566,7 @@ let fechaAnio;
       cropeddImg.toBlob(function (blob) {
         //let uploadImage = storageRef.child("fotos/" + userId + idOferta + numeroImg).put(blob);
         imgBloobs.push(blob);
-      });
+      }, 'image/jpeg', 0.3);
       /*let img = e.target.files[0];
       let uploadImage = storageRef.child("prueba/" + "img1").put(img);*/
       numImg(numeroImg, cropeddImg);
@@ -673,22 +673,6 @@ function initMap() {
       infowindow.open(map, marker);
       map.setCenter(results[0].geometry.location);
       map.setZoom(16);
-
-      /*map.setZoom(11);
-      map.setCenter(results[0].geometry.location);
-
-      // Set the position of the marker using the place ID and location.
-      marker.setPlace({
-        placeId: place.place_id,
-        location: results[0].geometry.location});
-
-      marker.setVisible(true);
-
-      infowindowContent.children['place-name'].textContent = place.name;
-      infowindowContent.children['place-id'].textContent = place.place_id;
-      infowindowContent.children['place-address'].textContent = results[0].formatted_address;
-
-      infowindow.open(map, marker);*/
     });
   });
 }
@@ -702,6 +686,8 @@ function croppImge(e) {
 
   img.cropper({
     zoomOnWheel: false,
+    autoCropArea: 1,
+    guides: false
   });
 
   $('input[type="file"]').val("");

@@ -17,6 +17,8 @@ var img;
 
     firebase.initializeApp(config);
 
+    let storagePorfilePropio = firebase.storage().ref("/profile_pictures");
+
     let imgPerfil = document.getElementById("imgPerfil");
     let articulo = document.createElement("article");
     let divName = document.createElement("div");
@@ -33,7 +35,11 @@ var img;
           var usuario = snapshot.val();
           var key = snapshot.key;
 
-          imgPerfil.src = `https://firebasestorage.googleapis.com/v0/b/inmobiliariasmx.appspot.com/o/profile_pictures%2F${userId}profilePicture?alt=media&token`;
+          storagePorfilePropio.child(user.uid + "profilePicture").getDownloadURL().then(function(url) {
+            imgPerfil.src = url;
+          }).catch(function(error) {
+              imgPerfil.src = "img/account_circle_grey.png";
+          });
 
           let data = `
             <p><i class="fas fa-phone porfile"></i><span>Teléfono: </span>${usuario.Numero}</p>

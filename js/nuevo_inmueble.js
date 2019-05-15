@@ -496,7 +496,7 @@ let lugarSelecionado;
       var cropeddImg = cropper.getCroppedCanvas();
       cropeddImg.toBlob(function (blob) {
         imgBloobs.push(blob);
-      });
+      }, 'image/jpeg', 0.3);
       numImg(numeroImg, cropeddImg);
       modalImg.style.display = "none";
 
@@ -605,7 +605,9 @@ function croppImge(e) {
   imgPropiedadCropper.src = URL.createObjectURL(e.target.files[0]);
 
   img.cropper({
-    zoomOnWheel: false
+    zoomOnWheel: false,
+    autoCropArea: 1,
+    guides: false
   });
 
   $('input[type="file"]').val("");
