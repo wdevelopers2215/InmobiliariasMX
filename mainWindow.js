@@ -8,6 +8,7 @@ exports.win;
 exports.createWindow = () => {
 
   this.win = new BrowserWindow({
+    show: false,
     minHeight: 300,
     minWidth: 1200,
     icon: `${__dirname}/assets/icons/64x64.png`,
@@ -15,6 +16,7 @@ exports.createWindow = () => {
   });
 
   this.win.maximize();
+  this.win.show();
 
   // Load main window content
   this.win.loadURL(`file://${__dirname}/index.html`);
