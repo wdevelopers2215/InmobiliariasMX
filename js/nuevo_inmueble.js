@@ -340,6 +340,12 @@ let lugarSelecionado;
                    if(!error) {
                      var storageRef = firebase.storage().ref();
 
+                     if(imgBloobs.length > 5) {
+                        var b = imgBloobs.length;
+                        // El primer valor es desde donde borrará el array y en el segundo calculará cuantos elementos borrará
+                        imgBloobs.splice(5, b-5+1);
+                     }
+                     
                      if(imgBloobs.length === 5) {
                        var uploadImage = storageRef.child("fotos/" + userId + idOferta + 1).put(imgBloobs[0]).then(function(snapshot) {
                          

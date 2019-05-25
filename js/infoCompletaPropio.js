@@ -103,7 +103,9 @@ let campoNumInmobiliario;
 
       contenedorPdf.style.display = "block";
 
-      var doc = new jsPDF('p', 'mm', 'legal');
+      var doc = new jsPDF('p', 'px', 'legal');
+      var width = doc.internal.pageSize.getWidth();
+      var height = doc.internal.pageSize.getHeight();
 
       let pdf = `
       <div class="title-logo-pdf clearfix">
@@ -161,7 +163,7 @@ let campoNumInmobiliario;
         allowTaint: true
       }).then(canvas => {
         var imgData = canvas.toDataURL('image/png');
-        doc.addImage(imgData, 'PNG', 0, 0);
+        doc.addImage(imgData, 'PNG', 0, 0, width, height);
         swal.close();
         contenedorPdf.style.display = "none";
         doc.save('PDF.pdf');
